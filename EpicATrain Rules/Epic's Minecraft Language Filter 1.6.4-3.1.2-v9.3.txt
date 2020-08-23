@@ -1,0 +1,3163 @@
+# Block all other characters that are NOT alphanumeric or punctuation
+match .*[^\x20-\x7F].*
+then deny
+then warn &6 I'm Sorry, But &4&l&n Only &6 American English ASCII Characters Are Allowed
+
+#
+#
+#
+#
+#
+#
+#
+#
+#
+# EpicATrain's Language Filter
+#
+# * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+#This will be the LAST version for this classic style of my language filter.
+#All future releases will be in a new style that consists of multiple files.
+#I will NO LONGER support this classic style of my language filter!
+# * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+#
+#
+#
+# Thank you for supporting my work.  Please consider donating to help
+#	further support family safe gaming!
+#		http://fnd.us/c/0QtL4
+# All donations will go towards the support and continuation of this
+#	language filter and the advancement of server & client side
+#	family safe game development.
+#
+# > > > > > Please Do NOT Remove or Edit Any Donation Lines < < < < <
+# > > > > > If you wish to remove these, please donate. Thanks! < < < < <
+#
+# ---------- Important Information ----------
+# This scripting code has no warranty or remedies, whether expressed or
+#	 implied, and is provided "as is".
+# The following scripting code is designed for the following servers:
+#	Minecraft -> Bukkit -> Pwnfilter Plugin
+# There is a goal to make this code universal for cross-platforms
+# 	on many other game servers. Support for other games is currently
+#	in development.  If you wish to participate and help develop this
+#	code, please contact EpicATrain at the email below.
+# THIS WORK IS COPYRIGHTED WITH THE UNITED STATES LIBRARY OF CONGRESS.
+#   YOU MUST CONTACT ADDAM 'EPICATRAIN' WAITKUS FOR COPYRIGHT PERMISSION.
+#   YOU MAY CONTACT ADDAM 'EPICATRAIN' WAITKUS AT ATRAINONLINE (AT) GMAIL
+#   (DOT.) COM
+# This work may be distributed in current format free of charge as
+# 	long as this work remains free of charge and used only on the
+#	game servers listed above.
+# Server administrators may modify this work to their preference for
+#	their server only, if so desired, as long as such work remains property
+# 	of Addam Waitkus with approperiate asknowledgements and remains
+#   distributed freely of charge.
+# Addam Waitkus: atrain(nothinghere)online [at] gmail (dot) com
+# ---------- End Important Information ----------
+#
+# ---------- Read Me ----------
+# This entire script is written so that any admin can edit out most
+# 	parts of this filter to his or her liking.  To stop a word from
+# 	being filtered, simply put a pound sign (#) next to the lines of
+# 	code you want to turn off.
+# It's highly NOT recommended to delete lines of code in case you
+# 	want to turn it back on at a later date.
+#
+# This filter no longer uses chat colors.
+#
+#
+# The ignore permission code is optional.
+#
+# The following is very important in order for your server to run
+# 	properly.  Below you will find the following lines of code:
+# 		ignore string youtube|google|biblegateway ... 
+# 		ignore string 192.168.1.1|1.2.3.4 ...
+# Please follow the instructions listed below to provide your server
+# 	information into the code to allow the script to run without errors.
+# ---------- End Read Me ---------- 
+#
+#
+#
+# Domain Filters - These Are Broken Up Into Multiple Filters Because Pwnfilter Can't
+# 	Handle The Code Required To Filter The Chat.
+#
+# EpicATrain's New Domain & Email Filter. This filter is to stop initial spamming of domain advertisers.
+# Additional Moderation Is Required As This Filter Is Rewritten With The Intent To Remove As
+# Many False Positives As Possible But Block As Many Initial Domain Spams As Possible.
+# I Have Named This Filter, "Big Bertha"
+match (?<!'|\w)(?:(?:(?:.*www.*|.*http.*|[a-zA-Z0-9-]|\s*dash\s*){1,63}(@|_|\s*\++\s*|\.|\(|\)|\\+|\s*\(dot\)\s*|\s*point\s*|\s*\(point\)\s*|\s*dot\s*|\*|\s*period\s*|\s*\(period\)\s*)){1,2}(?<!'|\w)(a+(\W|_)*c+|a+(\W|_)*d+|a+(\W|_)*e+|a+(\W|_)*f+|a+(\W|_)*g+|a+(\W|_)*i+|a+(\W|_)*l+|(?<!\s+dot\s+|\s+period\s+)a+(\W|_)*m+|(?<!\s+dot\s+|\s+period\s+)a+(\W|_)*n+|a+(\W|_)*o+|a+(\W|_)*q+|(?<!\s+dot\s+|\s+period\s+)a+(\W|_)*r+|a+(\W|_)*r+(\W|_)*p+(\W|_)*a+|(?<!\s+dot\s+|\s+period\s+)a+(\W|_)*s+|(?<!\s+dot\s+|\s+period\s+)a+(\W|_)*t+|a+(\W|_)*u+|(?<!\s+dot\s+|\s+period\s+)a+(\W|_)*w+|a+(\W|_)*x+|a+(\W|_)*z+|b+(\W|_)*a+|b+(\W|_)*b+|b+(\W|_)*d+|b+(\W|_)*e+|b+(\W|_)*f+|b+(\W|_)*g+|b+(\W|_)*h+|b+(\W|_)*i+|b+(\W|_)*i+(\W|_)*z+|b+(\W|_)*j+|b+(\W|_)*m+|b+(\W|_)*n+|b+(\W|_)*o+|b+(\W|_)*r+|b+(\W|_)*s+|b+(\W|_)*t+|b+(\W|_)*v+|b+(\W|_)*w+|(?<!\s+dot\s+|\s+period\s+)b+(\W|_)*y+|b+(\W|_)*z+|c+(\W|_)*a+|(?<!\s+dot\s+|\s+period\s+)c+(\W|_)*a+(\W|_)*t+|c+(\W|_)*c+|c+(\W|_)*d+|c+(\W|_)*f+|c+(\W|_)*g+|c+(\W|_)*h+|c+(\W|_)*i+|c+(\W|_)*k+|c+(\W|_)*l+|c+(\W|_)*m+|c+(\W|_)*n+|c+(\W|_)*o+|c+(\W|_)*o+(\W|_)*m+|c+(\W|_)*o+(\W|_)*o+(\W|_)*p+|c+(\W|_)*r+|c+(\W|_)*u+|c+(\W|_)*v+|c+(\W|_)*w+|c+(\W|_)*x+|c+(\W|_)*y+|c+(\W|_)*z+|d+(\W|_)*e+(?!-)|d+(\W|_)*j+|d+(\W|_)*k+|d+(\W|_)*m+|(?<!\s+dot\s+|\s+period\s+)d+(\W|_)*o+|d+(\W|_)*z+|e+(\W|_)*c+|e+(\W|_)*d+(\W|_)*u+|e+(\W|_)*e+|e+(\W|_)*g+|e+(\W|_)*r+|e+(\W|_)*s+|e+(\W|_)*t+|e+(\W|_)*u+|f+(\W|_)*i+|f+(\W|_)*j+|f+(\W|_)*k+|f+(\W|_)*m+|f+(\W|_)*o+|f+(\W|_)*r+|g+(\W|_)*a+|g+(\W|_)*b+|g+(\W|_)*d+|g+(\W|_)*e+|g+(\W|_)*f+|g+(\W|_)*g+|g+(\W|_)*h+|g+(\W|_)*i+|g+(\W|_)*l+|g+(\W|_)*m+|g+(\W|_)*n+|g+(\W|_)*o+(\W|_)*v+|g+(\W|_)*p+|g+(\W|_)*q+|g+(\W|_)*r+|g+(\W|_)*s+|g+(\W|_)*t+|g+(\W|_)*u+|g+(\W|_)*w+|g+(\W|_)*y+|h+(\W|_)*k+|h+(\W|_)*m+|h+(\W|_)*n+|h+(\W|_)*r+|h+(\W|_)*t+|h+(\W|_)*u+|i+(\W|_)*d+|i+(\W|_)*e+|i+(\W|_)*l+|(?<!\s+dot\s+|\s+period\s+)i+(\W|_)*m+|(?<!\s+dot\s+|\s+period\s+)i+(\W|_)*n+|i+(\W|_)*n+(\W|_)*f+(\W|_)*o+|i+(\W|_)*n+(\W|_)*t+|i+(\W|_)*o+|i+(\W|_)*q+|i+(\W|_)*r+|(?<!\s+dot\s+|\s+period\s+)i+(\W|_)*s+|(?<!\s+dot\s+|\s+period\s+)i+(\W|_)*t+|j+(\W|_)*e+|j+(\W|_)*m+|j+(\W|_)*o+|j+(\W|_)*p+|k+(\W|_)*e+|k+(\W|_)*g+|k+(\W|_)*h+|k+(\W|_)*i+|k+(\W|_)*m+|k+(\W|_)*n+|k+(\W|_)*p+|k+(\W|_)*r+|k+(\W|_)*w+|k+(\W|_)*y+|k+(\W|_)*z+|l+(\W|_)*a+|l+(\W|_)*b+|l+(\W|_)*c+|l+(\W|_)*i+|l+(\W|_)*k+|l+(\W|_)*r+|l+(\W|_)*s+|l+(\W|_)*t+|l+(\W|_)*u+|l+(\W|_)*v+|l+(\W|_)*y+|m+(\W|_)*a+|m+(\W|_)*c+|m+(\W|_)*d+|m+(\W|_)*e+|m+(\W|_)*g+|m+(\W|_)*h+|m+(\W|_)*i+(\W|_)*l+|m+(\W|_)*k+|m+(\W|_)*l+|m+(\W|_)*m+|m+(\W|_)*n+|m+(\W|_)*o+|m+(\W|_)*o+(\W|_)*b+(\W|_)*i+|m+(\W|_)*p+|m+(\W|_)*q+|m+(\W|_)*r+|m+(\W|_)*s+|m+(\W|_)*t+|m+(\W|_)*u+|m+(\W|_)*v+|m+(\W|_)*w+|m+(\W|_)*x+|(?<!\s+dot\s+|\s+period\s+)m+(\W|_)*y+|m+(\W|_)*z+|n+(\W|_)*a+|n+(\W|_)*c+|n+(\W|_)*e+|n+(\W|_)*e+(\W|_)*t+|n+(\W|_)*f+|n+(\W|_)*g+|n+(\W|_)*i+|n+(\W|_)*l+|(?<!\s+dot\s+|\s+period\s+)n+(\W|_)*o+|(?<!\s+dot\s+|\s+period\s+)n+(\W|_)*p+|n+(\W|_)*r+|n+(\W|_)*u+|n+(\W|_)*z+|o+(\W|_)*m+|o+(\W|_)*r+(\W|_)*g+|p+(\W|_)*a+|p+(\W|_)*e+|p+(\W|_)*f+|p+(\W|_)*g+|p+(\W|_)*h+|p+(\W|_)*k+|p+(\W|_)*l+|p+(\W|_)*m+|p+(\W|_)*n+|p+(\W|_)*r+|(?<!\s+dot\s+|\s+period\s+)p+(\W|_)*r+(\W|_)*o+|p+(\W|_)*s+|p+(\W|_)*t+|p+(\W|_)*w+|p+(\W|_)*y+|q+(\W|_)*a+|r+(\W|_)*e+|r+(\W|_)*o+|r+(\W|_)*s+|r+(\W|_)*u+|r+(\W|_)*w+|s+(\W|_)*a+|s+(\W|_)*b+|s+(\W|_)*c+|s+(\W|_)*d+|s+(\W|_)*e+|s+(\W|_)*g+|s+(\W|_)*h+|s+(\W|_)*i+|s+(\W|_)*j+|s+(\W|_)*k+|s+(\W|_)*l+|s+(\W|_)*m+|s+(\W|_)*n+|s+(\W|_)*o+|s+(\W|_)*r+|s+(\W|_)*t+|s+(\W|_)*u+|s+(\W|_)*v+|s+(\W|_)*x+|s+(\W|_)*y+|s+(\W|_)*z+|t+(\W|_)*c+|t+(\W|_)*d+|t+(\W|_)*e+(\W|_)*l+|t+(\W|_)*f+|t+(\W|_)*g+|t+(\W|_)*h+|t+(\W|_)*j+|t+(\W|_)*k+|t+(\W|_)*l+|t+(\W|_)*m+|t+(\W|_)*n+|(?<!\s+dot\s+|\s+period\s+)t+(\W|_)*o+|t+(\W|_)*p+|t+(\W|_)*r+|t+(\W|_)*t+|(?<!\s+dot\s+|\s+period\s+)t+(\W|_)*v+|t+(\W|_)*w+|t+(\W|_)*z+|u+(\W|_)*a+|u+(\W|_)*g+|u+(\W|_)*k+|(?<!\s+dot\s+|\s+period\s+)u+(\W|_)*s+|u+(\W|_)*y+|u+(\W|_)*z+|v+(\W|_)*a+|v+(\W|_)*c+|v+(\W|_)*e+|v+(\W|_)*g+|v+(\W|_)*i+|v+(\W|_)*n+|v+(\W|_)*u+|w+(\W|_)*f+|w+(\W|_)*s+|x+(\W|_)*n+|x+(\W|_)*x+(\W|_)*x+|y+(\W|_)*e+|y+(\W|_)*t+|z+(\W|_)*a+|z+(\W|_)*m+|z+(\W|_)*w+):*\d*(?!\w|,|')/*.*)
+# Please put the name of your server below.
+# Website Allow List. Afer yahoo.com, put a | followed by your website name (please
+# 	include any punctuation or com, edu, etc after it or it WILL cause problems)
+#---------------------------------------------------------------------------------
+ignore string youtube.com|google.com|biblegateway.com|winfamilyserver.co.uk|wraithaven.com|minecraft.net|minecraftwiki.com|yahoo.com
+#ignore user CooperDonald EpicATrain
+#---------------------------------------------------------------------------------
+events not sign
+then replace Myncraft
+then warn Sorry, But Big Bertha Doesn't Like You Advertising On This Server.
+then console say &player Violated Rule: (Advertising Big Bertha)
+then log
+
+# This Is An Identical But Crutial Filter That Is Required.
+#
+# ****************
+# Disabled Filter*
+# ****************
+#
+# EpicATrain's New Domain & Email Filter. This filter is to stop initial spamming of domain advertisers.
+# Additional Moderation Is Required As This Filter Is Rewritten With The Intent To Remove As
+# Many False Positives As Possible But Block As Many Initial Domain Spams As Possible.
+# I Have Named This Filter, "Fat Albert"
+#match (?<!'|\w)(?:(?:(?:.*www.*|.*http.*|[a-zA-Z0-9-]|\s*dash\s*){1,63}(?:\s*\.\s*)){1,2}(?<!'|\w)(a+(\W|_)*c+|a+(\W|_)*d+|a+(\W|_)*e+|a+(\W|_)*f+|a+(\W|_)*g+|a+(\W|_)*i+|a+(\W|_)*l+|(?<!\s*\.\s*)a+(\W|_)*m+|(?<!\s*\.\s*)a+(\W|_)*n+|a+(\W|_)*o+|a+(\W|_)*q+|(?<!\s*\.\s*)a+(\W|_)*r+|a+(\W|_)*r+(\W|_)*p+(\W|_)*a+|(?<!\s*\.\s*)a+(\W|_)*s+|(?<!\s*\.\s*)a+(\W|_)*t+|a+(\W|_)*u+|(?<!\s*\.\s*)a+(\W|_)*w+|a+(\W|_)*x+|a+(\W|_)*z+|b+(\W|_)*a+|b+(\W|_)*b+|b+(\W|_)*d+|b+(\W|_)*e+|b+(\W|_)*f+|b+(\W|_)*g+|b+(\W|_)*h+|b+(\W|_)*i+|b+(\W|_)*i+(\W|_)*z+|b+(\W|_)*j+|b+(\W|_)*m+|b+(\W|_)*n+|b+(\W|_)*o+|b+(\W|_)*r+|b+(\W|_)*s+|b+(\W|_)*t+|b+(\W|_)*v+|b+(\W|_)*w+|(?<!\s*\.\s*)b+(\W|_)*y+|b+(\W|_)*z+|c+(\W|_)*a+|(?<!\s*\.\s*)c+(\W|_)*a+(\W|_)*t+|c+(\W|_)*c+|c+(\W|_)*d+|c+(\W|_)*f+|c+(\W|_)*g+|c+(\W|_)*h+|c+(\W|_)*i+|c+(\W|_)*k+|c+(\W|_)*l+|c+(\W|_)*m+|c+(\W|_)*n+|c+(\W|_)*o+|c+(\W|_)*o+(\W|_)*m+|c+(\W|_)*o+(\W|_)*o+(\W|_)*p+|c+(\W|_)*r+|c+(\W|_)*u+|c+(\W|_)*v+|c+(\W|_)*w+|c+(\W|_)*x+|c+(\W|_)*y+|c+(\W|_)*z+|d+(\W|_)*e+(?!-)|d+(\W|_)*j+|d+(\W|_)*k+|d+(\W|_)*m+|(?<!\s*\.\s*)d+(\W|_)*o+|d+(\W|_)*z+|e+(\W|_)*c+|e+(\W|_)*d+(\W|_)*u+|e+(\W|_)*e+|e+(\W|_)*g+|e+(\W|_)*r+|e+(\W|_)*s+|e+(\W|_)*t+|e+(\W|_)*u+|f+(\W|_)*i+|f+(\W|_)*j+|f+(\W|_)*k+|f+(\W|_)*m+|f+(\W|_)*o+|f+(\W|_)*r+|g+(\W|_)*a+|g+(\W|_)*b+|g+(\W|_)*d+|g+(\W|_)*e+|g+(\W|_)*f+|g+(\W|_)*g+|g+(\W|_)*h+|g+(\W|_)*i+|g+(\W|_)*l+|g+(\W|_)*m+|g+(\W|_)*n+|g+(\W|_)*o+(\W|_)*v+|g+(\W|_)*p+|g+(\W|_)*q+|g+(\W|_)*r+|g+(\W|_)*s+|g+(\W|_)*t+|g+(\W|_)*u+|g+(\W|_)*w+|g+(\W|_)*y+|h+(\W|_)*k+|h+(\W|_)*m+|h+(\W|_)*n+|h+(\W|_)*r+|h+(\W|_)*t+|h+(\W|_)*u+|i+(\W|_)*d+|i+(\W|_)*e+|i+(\W|_)*l+|(?<!\s*\.\s*)i+(\W|_)*m+|(?<!\s*\.\s*)i+(\W|_)*n+|i+(\W|_)*n+(\W|_)*f+(\W|_)*o+|i+(\W|_)*n+(\W|_)*t+|i+(\W|_)*o+|i+(\W|_)*q+|i+(\W|_)*r+|(?<!\s*\.\s*)i+(\W|_)*s+|(?<!\s*\.\s*)i+(\W|_)*t+|j+(\W|_)*e+|j+(\W|_)*m+|j+(\W|_)*o+|j+(\W|_)*p+|k+(\W|_)*e+|k+(\W|_)*g+|k+(\W|_)*h+|k+(\W|_)*i+|k+(\W|_)*m+|k+(\W|_)*n+|k+(\W|_)*p+|k+(\W|_)*r+|k+(\W|_)*w+|k+(\W|_)*y+|k+(\W|_)*z+|l+(\W|_)*a+|l+(\W|_)*b+|l+(\W|_)*c+|l+(\W|_)*i+|l+(\W|_)*k+|l+(\W|_)*r+|l+(\W|_)*s+|l+(\W|_)*t+|l+(\W|_)*u+|l+(\W|_)*v+|l+(\W|_)*y+|m+(\W|_)*a+|m+(\W|_)*c+|m+(\W|_)*d+|(?<!\s*\.\s*)m+(\W|_)*e+|m+(\W|_)*g+|m+(\W|_)*h+|m+(\W|_)*i+(\W|_)*l+|m+(\W|_)*k+|m+(\W|_)*l+|m+(\W|_)*m+|m+(\W|_)*n+|m+(\W|_)*o+|m+(\W|_)*o+(\W|_)*b+(\W|_)*i+|m+(\W|_)*p+|m+(\W|_)*q+|m+(\W|_)*r+|m+(\W|_)*s+|m+(\W|_)*t+|m+(\W|_)*u+|m+(\W|_)*v+|m+(\W|_)*w+|m+(\W|_)*x+|(?<!\s*\.\s*)m+(\W|_)*y+|m+(\W|_)*z+|n+(\W|_)*a+|n+(\W|_)*c+|n+(\W|_)*e+|n+(\W|_)*e+(\W|_)*t+|n+(\W|_)*f+|n+(\W|_)*g+|n+(\W|_)*i+|n+(\W|_)*l+|(?<!\s*\.\s*)n+(\W|_)*o+|(?<!\s*\.\s*)n+(\W|_)*p+|n+(\W|_)*r+|n+(\W|_)*u+|n+(\W|_)*z+|o+(\W|_)*m+|o+(\W|_)*r+(\W|_)*g+|p+(\W|_)*a+|p+(\W|_)*e+|p+(\W|_)*f+|p+(\W|_)*g+|p+(\W|_)*h+|p+(\W|_)*k+|p+(\W|_)*l+|p+(\W|_)*m+|p+(\W|_)*n+|p+(\W|_)*r+|(?<!\s*\.\s*)p+(\W|_)*r+(\W|_)*o+|p+(\W|_)*s+|p+(\W|_)*t+|p+(\W|_)*w+|p+(\W|_)*y+|q+(\W|_)*a+|r+(\W|_)*e+|r+(\W|_)*o+|r+(\W|_)*s+|r+(\W|_)*u+|r+(\W|_)*w+|s+(\W|_)*a+|s+(\W|_)*b+|s+(\W|_)*c+|s+(\W|_)*d+|s+(\W|_)*e+|s+(\W|_)*g+|s+(\W|_)*h+|s+(\W|_)*i+|s+(\W|_)*j+|s+(\W|_)*k+|s+(\W|_)*l+|s+(\W|_)*m+|s+(\W|_)*n+|s+(\W|_)*o+|s+(\W|_)*r+|s+(\W|_)*t+|s+(\W|_)*u+|s+(\W|_)*v+|s+(\W|_)*x+|s+(\W|_)*y+|s+(\W|_)*z+|t+(\W|_)*c+|t+(\W|_)*d+|t+(\W|_)*e+(\W|_)*l+|t+(\W|_)*f+|t+(\W|_)*g+|t+(\W|_)*h+|t+(\W|_)*j+|t+(\W|_)*k+|t+(\W|_)*l+|t+(\W|_)*m+|t+(\W|_)*n+|(?<!\s*\.\s*)t+(\W|_)*o+|t+(\W|_)*p+|t+(\W|_)*r+|t+(\W|_)*t+|(?<!\s*\.\s*)t+(\W|_)*v+|t+(\W|_)*w+|t+(\W|_)*z+|u+(\W|_)*a+|u+(\W|_)*g+|u+(\W|_)*k+|(?<!\s*\.\s*)u+(\W|_)*s+|u+(\W|_)*y+|u+(\W|_)*z+|v+(\W|_)*a+|v+(\W|_)*c+|v+(\W|_)*e+|v+(\W|_)*g+|v+(\W|_)*i+|v+(\W|_)*n+|v+(\W|_)*u+|w+(\W|_)*f+|w+(\W|_)*s+|x+(\W|_)*n+|x+(\W|_)*x+(\W|_)*x+|y+(\W|_)*e+|y+(\W|_)*t+|z+(\W|_)*a+|z+(\W|_)*m+|z+(\W|_)*w+):*\d*(?!\w)(?!\w|')(?!\w|,|')/*.*)
+# Please put the name of your server below.
+# Website Allow List. Afer yahoo.com, put a | followed by your website name (please
+# 	include any punctuation or com, edu, etc after it or it WILL cause problems)
+#---------------------------------------------------------------------------------
+#ignore string youtube.com|google.com|biblegateway.com|winfamilyserver.co.uk|wraithaven.com|minecraft.net|minecraftwiki.com|yahoo.com
+#ignore user CooperDonald EpicATrain
+#---------------------------------------------------------------------------------
+#events not sign
+#then replace
+#then warn Sorry, But Fat Albert Doesn't Like You Advertising On This Server.
+#then console say &player Violated Rule: (Advertising Fat Albert)
+#then log
+
+# This Is Another Identical But Crutial Filter That Is Required.
+#
+# EpicATrain's New Domain & Email Filter. This filter is to stop initial spamming of domain advertisers.
+# Additional Moderation Is Required As This Filter Is Rewritten With The Intent To Remove As
+# Many False Positives As Possible But Block As Many Initial Domain Spams As Possible.
+# I Have Named This Filter, "The Fat Fury"
+match (?<!'|\w)(?:(?:(?:www.*|.*http.*|[a-zA-Z0-9]|\s*dash\s*){1,63}){1,2}(?<!'|\w)(a+(\W|_)*c+|a+(\W|_)*d+|a+(\W|_)*e+|a+(\W|_)*f+|a+(\W|_)*g+|a+(\W|_)*i+|a+(\W|_)*l+|a+(\W|_)*m+|a+(\W|_)*n+|a+(\W|_)*o+|a+(\W|_)*q+|a+(\W|_)*r+|a+(\W|_)*r+(\W|_)*p+(\W|_)*a+|a+(\W|_)*s+|a+(\W|_)*t+|a+(\W|_)*u+|a+(\W|_)*w+|a+(\W|_)*x+|a+(\W|_)*z+|b+(\W|_)*a+|b+(\W|_)*b+|b+(\W|_)*d+|b+(\W|_)*e+|b+(\W|_)*f+|b+(\W|_)*g+|b+(\W|_)*h+|b+(\W|_)*i+|b+(\W|_)*i+(\W|_)*z+|b+(\W|_)*j+|b+(\W|_)*m+|b+(\W|_)*n+|b+(\W|_)*o+|b+(\W|_)*r+|b+(\W|_)*s+|b+(\W|_)*t+|b+(\W|_)*v+|b+(\W|_)*w+|b+(\W|_)*y+|b+(\W|_)*z+|c+(\W|_)*a+|c+(\W|_)*a+(\W|_)*t+|c+(\W|_)*c+|c+(\W|_)*d+|c+(\W|_)*f+|c+(\W|_)*g+|c+(\W|_)*h+|c+(\W|_)*i+|c+(\W|_)*k+|c+(\W|_)*l+|c+(\W|_)*m+|c+(\W|_)*n+|c+(\W|_)*o+|c+(\W|_)*o+(\W|_)*m+|c+(\W|_)*o+(\W|_)*o+(\W|_)*p+|c+(\W|_)*r+|c+(\W|_)*u+|c+(\W|_)*v+|c+(\W|_)*w+|c+(\W|_)*x+|c+(\W|_)*y+|c+(\W|_)*z+|d+(\W|_)*e+(?!-)|d+(\W|_)*j+|d+(\W|_)*k+|d+(\W|_)*m+|d+(\W|_)*o+|d+(\W|_)*z+|e+(\W|_)*c+|e+(\W|_)*d+(\W|_)*u+|e+(\W|_)*e+|e+(\W|_)*g+|e+(\W|_)*r+|e+(\W|_)*s+|e+(\W|_)*t+|e+(\W|_)*u+|f+(\W|_)*i+|f+(\W|_)*j+|f+(\W|_)*k+|f+(\W|_)*m+|f+(\W|_)*o+|f+(\W|_)*r+|g+(\W|_)*a+|g+(\W|_)*b+|g+(\W|_)*d+|g+(\W|_)*e+|g+(\W|_)*f+|g+(\W|_)*g+|g+(\W|_)*h+|g+(\W|_)*i+|g+(\W|_)*l+|g+(\W|_)*m+|g+(\W|_)*n+|g+(\W|_)*o+(\W|_)*v+|g+(\W|_)*p+|g+(\W|_)*q+|g+(\W|_)*r+|g+(\W|_)*s+|g+(\W|_)*t+|g+(\W|_)*u+|g+(\W|_)*w+|g+(\W|_)*y+|h+(\W|_)*k+|h+(\W|_)*m+|h+(\W|_)*n+|h+(\W|_)*r+|h+(\W|_)*t+|h+(\W|_)*u+|i+(\W|_)*d+|i+(\W|_)*e+|i+(\W|_)*l+|i+(\W|_)*m+|i+(\W|_)*n+|i+(\W|_)*n+(\W|_)*f+(\W|_)*o+|i+(\W|_)*n+(\W|_)*t+|i+(\W|_)*o+|i+(\W|_)*q+|i+(\W|_)*r+|i+(\W|_)*s+|i+(\W|_)*t+|j+(\W|_)*e+|j+(\W|_)*m+|j+(\W|_)*o+|j+(\W|_)*p+|k+(\W|_)*e+|k+(\W|_)*g+|k+(\W|_)*h+|k+(\W|_)*i+|k+(\W|_)*m+|k+(\W|_)*n+|k+(\W|_)*p+|k+(\W|_)*r+|k+(\W|_)*w+|k+(\W|_)*y+|k+(\W|_)*z+|l+(\W|_)*a+|l+(\W|_)*b+|l+(\W|_)*c+|l+(\W|_)*i+|l+(\W|_)*k+|l+(\W|_)*r+|l+(\W|_)*s+|l+(\W|_)*t+|l+(\W|_)*u+|l+(\W|_)*v+|l+(\W|_)*y+|m+(\W|_)*a+|m+(\W|_)*c+|m+(\W|_)*d+|m+(\W|_)*e+|m+(\W|_)*g+|m+(\W|_)*h+|m+(\W|_)*i+(\W|_)*l+|m+(\W|_)*k+|m+(\W|_)*l+|m+(\W|_)*m+|m+(\W|_)*n+|m+(\W|_)*o+|m+(\W|_)*o+(\W|_)*b+(\W|_)*i+|m+(\W|_)*p+|m+(\W|_)*q+|m+(\W|_)*r+|m+(\W|_)*s+|m+(\W|_)*t+|m+(\W|_)*u+|m+(\W|_)*v+|m+(\W|_)*w+|m+(\W|_)*x+|m+(\W|_)*y+|m+(\W|_)*z+|n+(\W|_)*a+|n+(\W|_)*c+|n+(\W|_)*e+|n+(\W|_)*e+(\W|_)*t+|n+(\W|_)*f+|n+(\W|_)*g+|n+(\W|_)*i+|n+(\W|_)*l+|n+(\W|_)*o+|n+(\W|_)*p+|n+(\W|_)*r+|n+(\W|_)*u+|n+(\W|_)*z+|o+(\W|_)*m+|o+(\W|_)*r+(\W|_)*g+|p+(\W|_)*a+|p+(\W|_)*e+|p+(\W|_)*f+|p+(\W|_)*g+|p+(\W|_)*h+|p+(\W|_)*k+|p+(\W|_)*l+|p+(\W|_)*m+|p+(\W|_)*n+|p+(\W|_)*r+|p+(\W|_)*r+(\W|_)*o+|p+(\W|_)*s+|p+(\W|_)*t+|p+(\W|_)*w+|p+(\W|_)*y+|q+(\W|_)*a+|r+(\W|_)*e+|r+(\W|_)*o+|r+(\W|_)*s+|r+(\W|_)*u+|r+(\W|_)*w+|s+(\W|_)*a+|s+(\W|_)*b+|s+(\W|_)*c+|s+(\W|_)*d+|s+(\W|_)*e+|s+(\W|_)*g+|s+(\W|_)*h+|s+(\W|_)*i+|s+(\W|_)*j+|s+(\W|_)*k+|s+(\W|_)*l+|s+(\W|_)*m+|s+(\W|_)*n+|s+(\W|_)*o+|s+(\W|_)*r+|s+(\W|_)*t+|s+(\W|_)*u+|s+(\W|_)*v+|s+(\W|_)*x+|s+(\W|_)*y+|s+(\W|_)*z+|t+(\W|_)*c+|t+(\W|_)*d+|t+(\W|_)*e+(\W|_)*l+|t+(\W|_)*f+|t+(\W|_)*g+|t+(\W|_)*h+|t+(\W|_)*j+|t+(\W|_)*k+|t+(\W|_)*l+|t+(\W|_)*m+|t+(\W|_)*n+|t+(\W|_)*o+|t+(\W|_)*p+|t+(\W|_)*r+|t+(\W|_)*t+|t+(\W|_)*v+|t+(\W|_)*w+|t+(\W|_)*z+|u+(\W|_)*a+|u+(\W|_)*g+|u+(\W|_)*k+|u+(\W|_)*s+|u+(\W|_)*y+|u+(\W|_)*z+|v+(\W|_)*a+|v+(\W|_)*c+|v+(\W|_)*e+|v+(\W|_)*g+|v+(\W|_)*i+|v+(\W|_)*n+|v+(\W|_)*u+|w+(\W|_)*f+|w+(\W|_)*s+|x+(\W|_)*n+|x+(\W|_)*x+(\W|_)*x+|y+(\W|_)*e+|y+(\W|_)*t+|z+(\W|_)*a+|z+(\W|_)*m+|z+(\W|_)*w+):*\d*(?!\w|,|')/*.*)
+# Please put the name of your server below.
+# Website Allow List. Afer yahoo.com, put a | followed by your website name (please
+# 	include any punctuation or com, edu, etc after it or it WILL cause problems)
+#---------------------------------------------------------------------------------
+ignore string youtube.com|google.com|biblegateway.com|winfamilyserver.co.uk|wraithaven.com|minecraft.net|minecraftwiki.com|yahoo.com
+ignore user CooperDonald EpicATrain
+#---------------------------------------------------------------------------------
+events not sign
+then replace Myncraft
+then warn Sorry, But The Fat Fury Doesn't Like You Advertising On This Server.
+then console say &player Violated Rule: (Advertising Fat Fury)
+then log
+
+# IP Genuine Checker (Checks The IP To See If It's Genuine Or Not) by Tremor77 And EpicATrain
+# If The Data Presented Is Not A Genuine Valid IP, It Does Not Get Filtered.
+# Additional Moderation Is Required As This Filter Is Rewritten With The Intent To Remove As
+# Many False Positives As Possible But Block As Many Initial IP Spams As Possible.
+match (?<!'|\w)(?:(?:(?:25[o0-5]|2[o0-4][o0-9]|[o01]?[o0-9][o0-9]?)(\.+|\.+\s+|\s+\.+\s+|\s+\.+|\++|,+|\s*\(dot\)\s*|\s*dot\s*|\s*\*+\s*|\s*point\s*)){3}?(?:25[o0-5]|2[o0-4][o0-9]|[o01]?[o0-9][o0-9]?)(\s*:\s*\d*|(?!\w)))(?![\x22-\x27]|[\x2A-\x2C]\S+|[\x30-\x39]|[\x40-\x5E]|[\x60-\x7E])
+#---------------------------------------------------------------------------------
+# Please put your IP address of the server in the space below
+# After the 1.2.3.4, put a | followed by your server's IP address
+#---------------------------------------------------------------------------------
+ignore string 192.168.1.1|1.2.3.4
+ignore user CooperDonald EpicATrain
+#---------------------------------------------------------------------------------
+events not sign
+then replace Myncraft
+then warn Sorry, But Advertising On This Server Isn't Allowed.
+then log
+#
+#
+# Voluntary IP Space Filter
+# This filter is disabled by default. You can use this IP Filter if you wish BUT
+#    It WILL Catch MORE False Positives. This Filter is designed to filter IP addresses
+#    That look like this:  192 168 1 1 Where the spaces are dots.
+# Currently, as of this writing (8/25/2013) there is no fix for the false positives that
+#    this filter will produce. There are plans to fix the false positives but there is
+#	 no set date. Please do not contact me about the false positives. You use this filter
+# 	 at your own risk.
+# If you wish to use this filter, please use it in CONJUNCTION with the IP Filter
+#    Listed Above, NOT in replacement of the filter.  To use, remove the hash marks (#)
+#    In front of match, ignore, then replace, then warn, and then log.
+match (?<!'|\w)(?:(?:(?:25[o0-5]|2[o0-4][o0-9]|[o01]?[o0-9][o0-9]?)(\s+)){3}?(?:25[o0-5]|2[o0-4][o0-9]|[o01]?[o0-9][o0-9]?)(\s*:\s*\d*|(?!\w)))(?![\x22-\x27]|[\x2A-\x2C]\S+|[\x30-\x39]|[\x40-\x5E]|[\x60-\x7E])
+#---------------------------------------------------------------------------------
+# Please put your IP address of the server in the space below
+# After the 1.2.3.4, put a | followed by your server's IP address
+#---------------------------------------------------------------------------------
+ignore string 192 168 1 1|1 2 3 4
+ignore user CooperDonald EpicATrain
+#---------------------------------------------------------------------------------
+events not sign
+then replace Myncraft
+then warn Sorry, But The Server Has Detected Your Input As IP Advertising.
+then log
+
+#---------------------------------------------------------------------------------
+# Custom List & Annoying Terms
+# Op/Admin generated list
+# This list is NOT fool proof. It is weak so that admins can easily add words.
+# After each letter, add +(\W)* to make the filter a little stronger.
+# The + looks for repeating words.
+# The (\W)* looks for spaces and symbols to filter out but does NOT filter
+# 	underscores.  To filter those, use +(\W|_)* which looks for everything.
+# The following line of code removes all dashes, spaces, and other variants
+# Old System when searching words:
+# \.*\-*\s*\**
+# Revised Anti-Crack Method:
+# (\.|\-|\s|\*|_|\^|\+|\~|\`|\=|\,|\&|\@)*
+# The PERFECT Anti-Crack Method While Allowing Regular Chatter:
+# (\W|_)*
+#---------------------------------------------------------------------------------
+
+# (C9) Match: Stop players from calling EpicATrain Epic
+match (?<!'|\w)^(E+(\W|_)*P+(\W|_)*I+(\W|_)*C+)$(?!\w)|(?<!'|\w)(hey epic)|(hi epic)(?!\w)
+then randrep If you live everyday as though it's your last, eventually it'll be appropriate.|Last night I lay in bed looking up at the stars in the sky, and I thought to myself, where the heck is the ceiling?|Everybody is somebody else's wierdo.|If you let a smile be your umbrella, you'll get very wet.|Smile, and the world wonders what you're up to.|You're just jealous because the voices only talk to ME.|He who laughs last thinks slowest.|Always remember you're unique... Just like everyone else.|If at first you don't succeed, skydiving isn't for you.|The secret of success is sincerity. Once you can fake that you've got it made.|I think animal testing is a terrible idea; they get all nervous and give the wrong answers.|There are three kinds of people in the world: those who can count and those who can't.|Doesn't expecting the unexpected make the unexpected become the expected?|On the other hand, you have different fingers.|Psychiatrists say that 1 of 4 people are mentally ill. Check 3 friends. If they're OK, you're it.|Never put off until tomorrow what you can avoid altogether.|It's always darkest before dawn. So if you're going to steal your neighbor's newspaper, that's the time to do it.|Before you criticize someone, you should walk a mile in their shoes. That way, when you criticize them, you're a mile away and you have their shoes.|There are two theories to arguing with women. Neither one works.|Life is like a box of chocolates... full of nuts.|If everything is coming your way, then you're in the wrong lane.|Duct tape is like the force; it has a light side & a dark side, and it holds the universe together.|Do not walk behind me, for I may not lead. Do not walk ahead of me, for I may not follow. Do not walk beside me, either. Just leave me the heck alone.|Build a man a fire, and he'll be warm for a day. Set a man on fire, and he'll be warm for the rest of his life.|Anything worth taking seriously is worth making fun of.|Two wrongs don't make a right...But three lefts do.
+
+# (C1) Match: he'll
+match (?<!'|\w)(he'll)(?!\w)
+then rewrite he will
+then console say Custom Filter: (C1)
+then log
+
+# (C2) Match: yolo
+match (?<!'|\w)(y+(\W|_)*(0|o)+(\W|_)*(1|l)+(\W|_)*(0|o)+)
+then rewrite My mom thinks I'm cool...
+then console say Custom Filter: (C2)
+then log
+
+# (C3) Match: swag
+match (?<!'|\w)((5|s|z)+(\W|_)*w+(\W|_)*a+(\W|_)*g+)
+then rewrite My mom says I'm cool...
+then console say Custom Filter: (C3)
+then log
+
+# (C4) Match: TV
+match (?<!'|\w)(TV)(?!\w)
+then rewrite Television
+then console say Custom Filter: (C4)
+then log
+
+# (C5) Match: !lag
+match ^(\!lag)$
+then rewrite 
+then warn &9> > > Here are a few ways to fix lag: 1) reset your client 2) re-boot 3) update Java 4) change in-game settings to fast graphics, render tiny, etc.
+then log
+
+# (C6) Match: lag
+match (?<!'|\w)(l+(\W|_)*a+(\W|_)*g+(\W|_)*)
+then warn &eChecking To See If Server is Lagging
+then warn &eIf The TPS Shown Is Less Than 19, The Server Is Lagging, Otherwise, It's On Your End.
+then warn &eType !lag To See How To Fix Lag On Your End.
+then console tps
+then log
+
+# (C7) Match: Funny Random 1
+match (?<!'|\w)(smacks)(?!\w)
+then rewrite Kisses
+then console say Custom Filter: (C7)
+then log
+
+# (C8) Match: Funny Random 2
+match (?<!'|\w)(stabs)(?!\w)
+then rewrite Cuddles
+then console say Custom Filter: (C8)
+then log
+
+# (C9) Match: Funny Random 3
+match (?<!'|\w)(slaps)(?!\w)
+then rewrite smooches
+then console say Custom Filter: (C9)
+then log
+
+# (C10) Match: Funny Random 4
+match (?<!'|\w)(kicks)(?!\w)
+then rewrite likes
+then console say Custom Filter: (C10)
+then log
+
+# (C11) Match: Funny Random 5
+match (?<!'|\w)(punches)(?!\w)
+then rewrite loves
+then console say Custom Filter: (C11)
+then log
+
+# (C12) Match: Funny Random 6
+match (?<!'|\w)(hits)(?!\w)
+then rewrite love taps
+then console say Custom Filter: (C12)
+then log
+
+#---------------------------------------------------------------------------------
+# Server Utilities List
+# Please do NOT modify or remove this list.
+# The language filter requires these to work properly.
+#---------------------------------------------------------------------------------
+
+# (U01) Caps Lock Detection of 15 letters or more.
+match (\p{Lu}|\s){15,200}
+events not sign
+then lower
+then warn &c> > > Caps Lock Detection Engaged < < <
+
+# (U02) Advanced Detection of Single Letter Spamming
+match (?<!'|\w)(^[a-z]$)(?!\w)
+ignore string I
+events not sign
+then replace 
+then console say &player Violated Rule: (U02)
+
+# (U03) Match: fn and change it to fun
+match (?<!'|\w)(f+(\W|_)*n+)(?!\w)
+events not sign
+then rewrite fun
+then console say &player Violated Rule: (U03)
+
+# (U07) Match: /\/\ and change it to m
+match (/\\/\\)|(/\\\./\\)
+events not sign
+then rewrite m
+then console say &player Violated Rule: (U07)
+
+# (U08) Match: \/\/ and change it to w
+match (\\/\\/)
+events not sign
+then rewrite w
+then console say &player Violated Rule: (U08)
+ 
+# (U09) Match: \/ and change it to v
+match (\\/)
+events not sign
+then rewrite v
+then console say &player Violated Rule: (U09)
+
+# (U10) Match: F and remove it
+match (?<!'|\w)(f)(?!\w)
+events not sign
+ignore string /f
+then rewrite 
+then console say &player Violated Rule: (U10)
+
+# (U14) Match: Look for * in the middle of a word.
+match ((?:[a-zA-Z])+\*+(?:[a-zA-Z])+)
+events not sign
+#ignore string =*(|:*(|=*-(|:*-(|*\0/*|=*)|:*)|=*-)|:*-)
+then replace 
+then console say &player Violated Rule: (U14)
+then log
+
+# (U15) Match: Look for mutiple *
+match (\*3,})
+events not sign
+ignore string =*(|:*(|=*-(|:*-(|*\0/*|=*)|:*)|=*-)|:*-)
+then replace 
+then console say &player Violated Rule: (U15)
+then log
+
+# (U21) Match: Look for + in the middle of a word.
+match ((?:[a-zA-Z])+\++(?:[a-zA-Z])+)
+events not sign
+then replace 
+then console say &player Violated Rule: (U21)
+then log
+
+# (U22) Match: Look for + at the beginning or end of a word
+match (\w+\+$)|(\+$\w+)
+events not sign
+ignore string =*(|:*(|=*-(|:*-(|*\0/*|=*)|:*)|=*-)|:*-)
+then replace 
+then console say &player Violated Rule: (U22)
+then log
+
+# (U23) Match: Look for !+ at the end of a word
+match (\w+\!\+$)
+events not sign
+ignore string =*(|:*(|=*-(|:*-(|*\0/*|=*)|:*)|=*-)|:*-)
+then replace 
+then console say &player Violated Rule: (U23)
+then log
+
+# (U24) Match: Look for +! at the beginning of a word
+match (^\+\!\w+)
+events not sign
+ignore string =*(|:*(|=*-(|:*-(|*\0/*|=*)|:*)|=*-)|:*-)
+then replace 
+then console say &player Violated Rule: (U24)
+then log
+
+# (U27) Match: Stop those annoying scams with Planet Minecraft Reviewers
+match .*((Planet(\w|\W|\d|_)*Minecraft|PMC)(\w|\W|\d|_)*(interview|review|reveiw|reviewer|reveiwer)).*|.*((interview|review|reveiw|reviewer|reveiwer)(\w|\W|\d|_)*(Planet(\w|\W|\d|_)*Minecraft|PMC)).*|.*((I|I'm|I am)(\w|\W|\d|_)*(from|with|belong|affiliat|elationship|admin|mod|member)(\w|\W|\d|_)*(Planet(\w|\W|\d|_)*Minecraft|PMC)).*
+then warn &aPlanet Minecraft Reviewers Are Not Welcome On This Server
+then replace 
+then console say &player Violated Rule: (U27)
+then log
+
+# (U28) Match: !opme
+#match ^(\!opme).*
+#then replace ~^~^~Official PMC Reviewer Is Now Kicked~^~^~
+#then conchain kick &player You are now op!|ban &player You are now op!
+#then console say &player Violated Rule: (U28)
+#then log
+
+# (U29) Website: Type !website To Display Your Server's Website
+match ^(\!website).*
+then replace Website: Myncraft.no-ip.org (!website)
+then console say &player Activated Rule (U29) Website: Myncraft.no-ip.org
+
+# (U30) Match: !op
+#match ^(\!op).*
+#then replace Only PMC Reviewers Have Access To !Op
+#then console say Command !op Initiated. (U30)
+
+# (U31) Match: Stop annoying players from asking for admin, mod, etc
+match .*((how did|can I have|can I get|How Do|How To Be|May I Be|Can I be|Could I Be|culd I|Could I have|make me|I wsh I|I could have|I could be|I would be|I would make|How Can I|How To|May I Be|gimme|I really Want|I wish I|I want to be|can you make|can I has|give me|can has|can I be|Can You)(\w|\W|\d|_)*(o+(\W|_)*p+|operator|a+(\W|_)*d+(\W|_)*m+(\W|_)*[ei]+(\W|_)*n+|administrator|m+(\W|_)*o+(\W|_)*d+|moderator|watchman|watchmen|s+(\W|_)*t+(\W|_)*a+(\W|_)*f+(\W|_)*f+|o+(\W|_)*p+(\W|_)*e*(\W|_)*d|V+(\W|_)*I+(\W|_)*P+)).*
+then deny
+then warn Staff Is Invite Only.  Never Ask To Be Apart Of Staff... EVER.
+then console say &player Violated Rule: (U31)
+then log
+
+# (U32) Match: Mute Players Who Don't Like The Server.
+match .*(stupid|gay|lame|hate|h8)(\w|\W|\d|_)*(server).*|.*((server)(\w|\W|\d|_)*(suck|gay|blow|lame|stupid)).*
+then replace I Love This Server!
+then warn Don't talk bad about the server.
+then console say &player Likes Our Server! (U32)
+then log
+
+# (U34) Experimental Letter & Word Spam Filter
+match (.+)(?=\1\1\1+)
+events not sign
+then rewrite
+then warn &c> > > Spam Detection Engaged < < <
+#then console say &player Violated Rule: (U34)
+
+# (U35) Remove Automatic Advertising
+match .*(herobrine(\w|\W|\d|_)*mod).*|.*(Platinum Client).*
+then deny
+then warn &4> > > Message Denied < < <
+then console say &player Violated Rule: (U35 - Hacking)
+then log
+
+# (U36) Donations Link (Please do NOT remove unless you've donated)
+# If you have donated, Please Contact EpicATrain For Information On How To Disable
+# The Embeded Donation Links.  Thank You For Donating!
+match (donations|donating|donate)
+then warn Please Consider Supporting My Work: http://fnd.us/c/0QtL4 (U36)
+
+# (U37) Match: I hate this filter
+match .*((do not like|don't like|hate|dislike|not a fan|stupid|gay|lame|flame)(\w|\W|\d|_)*(filter|censor|sensor)).*|.*((filter|censor|sensor)(\w|\W|\d|_)*(suck|gay|blow|lame|stupid)).*
+then replace I'm in love with this filter
+then console say &player Violated Rule: (U37)
+then log
+
+# (U38) Match: I love this filter
+match ((like|Love|best)(\w|\W|\d|_)*(filter|censor|sensor))|((filter|censor|sensor)(\w|\W|\d|_)*(awesome|amazing|cool|neat|best))
+then warn <EpicATrain> &aThanks for the compliment! I try to work hard to keep the language clean! (U38)
+
+# (U44) Match: fin and change it to fun
+match (?<!'|\w)(f+(\W|_)*i+(\W|_)*n+)(?!\w)
+events not sign
+then rewrite fun
+then console say &player Violated Rule: (U44)
+
+# (U45) Match: $$ and change it to ss
+match (\$){2,}
+events not sign
+then rewrite ss
+then console say &player Violated Rule: (U45)
+
+#---------------------------------------------------------------------------------
+# Light Block List
+# This list is not really swearing but put-downs.
+#---------------------------------------------------------------------------------
+
+# (L1-1) Advance Match: butt (Beginning)
+match (?<!'|\w)(b+(\W|_)*u+(\W|_)*(7|t)+[a-zA-z]*)
+ignore string buts|butch|buteo|butle|butte|butty|butut|butyl|butane|butene|buteos|butled|butler|butles|butted|butter|buttes|button|bututs|butyls|butanes|butanol|butcher|butches|butenes|butlers|butlery|butling|buttals|butters|buttery|butting|buttons|buttony|butyral|butyric|butyrin|butyryl|butanols|butanone|butchers|butchery|buttered|buttoned|buttoner|buttress|butylate|butylene|butyrals|butyrate|butyrins|butyrous|butyryls|butadiene|butanones|butchered|butcherly|butleries|buttercup|butterfat|butterfly|butterier|butteries|buttering|butternut|buttinski|buttinsky|buttoners|buttoning|buttstock|butylated|butylates|butylenes|butyrates|butadienes|butcheries|butchering|butterball|buttercups|butterfats|butterfish|butteriest|butterless|buttermilk|butternuts|butterweed|butterwort|buttonball|buttonbush|buttonhole|buttonhook|buttonless|buttonwood|buttressed|buttresses|buttstocks|butylating|butylation|butterballs|butterflied|butterflies|butterflyer|buttermilks|butterweeds|butterworts|buttinskies|buttonballs|buttonholed|buttonholer|buttonholes|buttonhooks|buttonwoods|buttressing|butylations|butterfishes|butterflyers|butterflying|butterscotch|buttonbushes|buttonholers|buttonholing|buttonhooked|butterfingers|buttonhooking|butyraldehyde|butyrophenone|butterfingered|butterscotches|butyraldehydes|butyrophenones
+then rewrite But
+# then console say &player Violated Rule (L1-1)
+# then log
+
+# (L1-2) Advance Match: butt (Ending), bung 
+match (b+(\W|_)*u+(\W|_)*(7|t)+(\W|_)*(7|t)+)(?!\w)|(b+(\W|_)*u+(\W|_)*n+(\W|_)*g+(\W|_)*h+(\W|_)*o+(\W|_)*l+(\W|_)*e+(\W|_)*)
+then rewrite but
+# then console say &player Violated Rule (L1-2)
+# then log
+
+# (L2) Match: hump
+# But allow thumping
+match (?<!'|\w)(h+(\W|_)*u+(\W|_)*m+(\W|_)*p+(\W|_)*i*(\W|_)*n*(\W|_)*g*(\W|_)*e*(\W|_)*d*(\W|_)*r*(\W|_)*s*)(?!\w)
+then rewrite dance 
+then console say &player Violated Rule (L2)
+then log
+
+# (L3) Match: jerk
+match (?<!'|\w)(j+(\W|_)*(e|u)+(\W|_)*r+(\W|_)*(c|k)+(\W|_)*s*)(?!\w)
+then rewrite meanie
+then console say &player Violated Rule (L3)
+then log
+
+# (L4) Search for crap, crappy
+match (?<!'|\w)((c|k)+(\W|_)*r+(\W|_)*a+(\W|_)*p+(\W|_)*y*)(?!\w)
+then rewrite poopy pants
+then console say &player Violated Rule (L4)
+then log
+
+# (L5) Search for screw
+match (?<!'|\w)((5|s|z)+(\W|_)*(c|k)+(\W|_)*r+(\W|_)*(3|e)+(\W|_)*w+((\W|_)*e*(\W|_)*d*))(?!\w)
+then rewrite I would like to dance with
+then console say &player Violated Rule (L5)
+then log
+
+# (L6) Search for turd, terd, tard
+match (?<!'|\w)((7|t)+(\W|_)*(3|a|e|u)+(\W|_)*r+(\W|_)*d+((\W|_)*s*))(?!\w)
+then rewrite Jesus Loves You
+then console say &player Violated Rule (L6)
+then log
+
+# (L7) Search for dumb
+match (?<!'|\w)(d+(\W|_)*u+(\W|_)*m+(\W|_)*(a|b|f|s)+)(?!\w)
+then rewrite silly
+then console say &player Violated Rule (L7)
+then log
+
+# (L8) Search for flamer
+match (?<!'|\w)(f+(\W|_)*(1|l)+(\W|_)*a+(\W|_)*m+(\W|_)*(3|e)+(\W|_)*r+((\W|_)*s*))(?!\w)
+then rewrite meanie
+then console say &player Violated Rule (L8)
+then log
+
+# (L9) Match: pecker
+match (?<!'|\w)(p+(\W|_)*(3|e)+(\W|_)*(c|k)+(\W|_)*(c|k)*(\W|_)*(3|e)+(\W|_)*r+((\W|_)*s*))(?!\w)
+then rewrite flashlight
+then console say &player Violated Rule (L9)
+then log
+
+# (L10) Match: shut up
+match (?<!'|\w)(s+(\W|_)*h+(\W|_)*u+(\W|_)*t+(((\W|_)*u+(\W|_)*p+)|((\W|_)*i+(\W|_)*t+)))(?!\w)
+then rewrite love me
+then console say &player Violated Rule (L10)
+then log
+
+# (L11) Match: suck it
+match (?<!'|\w)(s+(\W|_)*u+(\W|_)*c+(\W|_)*k+(\W|_)*i+(\W|_)*t+)(?!\w)
+then rewrite love me
+then console say &player Violated Rule (L11)
+then log
+
+# (L12) Match: suck up
+match (?<!'|\w)(s+(\W|_)*u+(\W|_)*c+(\W|_)*k+(\W|_)*u+(\W|_)*p+)(?!\w)
+then rewrite love me
+then console say &player Violated Rule (L12)
+then log
+
+# (L13) Match: Muffin top
+match (?<!'|\w)(m+(\W|_)*u+(\W|_)*f+(\W|_)*i+(\W|_)*n+(\W|_)*t+(\W|_)*o+(\W|_)*p+)(?!\w)
+then rewrite waist
+then console say &player Violated Rule (L13)
+then log
+
+# (L14) Match: I swear
+match (?<!'|\w)(I+(\W|_)*s+(\W|_)*w+(\W|_)*e+(\W|_)*a+(\W|_)*r+)(?!\w)
+then rewrite I can't swear
+then console say &player Violated Rule (L14)
+then log
+
+# (L15) Match: fart face
+match (?<!'|\w)(f+(\W|_)*a+(\W|_)*r+(\W|_)*t+(\W|_)*f+(\W|_)*a+(\W|_)*c+(\W|_)*e+)(?!\w)
+then rewrite nice face
+then console say &player Violated Rule (L15)
+then log
+
+# (L16) Match: get a life
+match (?<!'|\w)(g+(\W|_)*e+(\W|_)*t+(\W|_)*a+(\W|_)*l+(\W|_)*i+(\W|_)*f+(\W|_)*e+)(?!\w)
+then rewrite have a blessed life
+then console say &player Violated Rule (L16)
+then log
+
+# (L17) Match: get bent
+match (?<!'|\w)(g+(\W|_)*e+(\W|_)*t+(\W|_)*b+(\W|_)*e+(\W|_)*n+(\W|_)*t+)(?!\w)
+then rewrite be blessed
+then console say &player Violated Rule (L17)
+then log
+
+# (L18) Match: newb, newbie, noob, noobie, nooby
+match (?<!'|\w)(n+(\W|_)*e+(\W|_)*w+(\W|_)*b+((\W|_)*i*(\W|_)*e*(\W|_)*y*))(?!\w)|(?<!'|\w)(n+(\W|_)*o+(\W|_)*b+((\W|_)*i*(\W|_)*e*(\W|_)*y*))(?!\w)
+then rewrite novice player
+then console say &player Violated Rule (L18)
+then log
+
+# (L19) Match: tea bag
+match (?<!'|\w)(t+(\W|_)*e*(\W|_)*a*(\W|_)*b+(\W|_)*a+(\W|_)*g+)
+then rewrite squat
+then console say &player Violated Rule (L19)
+then log
+
+# (L20) Match: your mom, yo momma, yo mamma, your mama
+match (?<!'|\w)(y+(\W|_)*o+(\W|_)*u*(\W|_)*r*(\W|_)*m+(\W|_)*(a|o)+(\W|_)*m+(\W|_)*a+)(?!\w)
+then rewrite your mom is awesome
+then console say &player Violated Rule (L20)
+then log
+
+# (L21) Match: bite me, bite my, kiss my
+match (?<!'|\w)(b+(\W|_)*i+(\W|_)*t+(\W|_)*e+(\W|_)*m+(\W|_)*(e|y)+)(?!\w)|(?<!'|\w)(k+(\W|_)*i+(\W|_)*s+(\W|_)*s+(\W|_)*m+(\W|_)*y+)(?!\w)
+then rewrite love me
+then console say &player Violated Rule (L21)
+then log
+
+# (L22) Match: I hate you
+match (?<!'|\w)(I+(\W|_)*h+(\W|_)*a+(\W|_)*t+(\W|_)*e+(\W|_)*y+(\W|_)*o+(\W|_)*u+)(?!\w)
+then rewrite I Love You! Marry Me?
+then console say &player Violated Rule (L22)
+then log
+
+# (L23) Match: loser
+match (?<!'|\w)(l+(\W|_)*o+(\W|_)*(s|z)+(\W|_)*e+(\W|_)*r+)(?!\w)
+then rewrite runner up
+then console say &player Violated Rule (L23)
+then log
+
+# (L24) Match: idiot
+match (?<!'|\w)(i+(\W|_)*d+(\W|_)*i+(\W|_)*o+(\W|_)*t+)(?!\w)
+then rewrite I'm not a complete idiot, some parts are missing.
+then console say &player Violated Rule (L24)
+then log
+
+# (L25) Match: wimp
+match (?<!'|\w)(w+(\W|_)*i+(\W|_)*m+(\W|_)*p+)(?!\w)
+then rewrite outstanding person
+then console say &player Violated Rule (L25)
+then log
+
+# (L26) Match: scum
+match (?<!'|\w)(s+(\W|_)*c+(\W|_)*u+(\W|_)*m+)(?!\w)
+then rewrite beauty
+then console say &player Violated Rule (L26)
+then log
+
+# (L27) Match: dork
+match (?<!'|\w)(d+(\W|_)*o+(\W|_)*r+(\W|_)*k+)(?!\w)
+then rewrite person with more brains than I
+then console say &player Violated Rule (L27)
+then log
+
+# (L28) Match: ugly
+match (?<!'|\w)(u+(\W|_)*g+(\W|_)*l+(\W|_)*y+)(?!\w)
+then rewrite unappealing
+then console say &player Violated Rule (L28)
+then log
+
+# (L29) Match: incompetent
+match (?<!'|\w)(i+(\W|_)*n+(\W|_)*c+(\W|_)*o+(\W|_)*m+(\W|_)*p+(\W|_)*e+(\W|_)*t+(\W|_)*e+(\W|_)*n+(\W|_)*t+)(?!\w)
+then rewrite lacking
+then console say &player Violated Rule (L29)
+then log
+
+# (L30) Match: Ignorant
+match (?<!'|\w)(i+(\W|_)*g+(\W|_)*n+(\W|_)*o+(\W|_)*r+(\W|_)*a+(\W|_)*n+(\W|_)*t+)(?!\w)
+then rewrite uneducated
+then console say &player Violated Rule (L30)
+then log
+
+# (L31) Match: Imbecile
+match (?<!'|\w)(i+(\W|_)*m+(\W|_)*b+(\W|_)*e+(\W|_)*c+(\W|_)*i+(\W|_)*l+(\W|_)*e+)(?!\w)
+then rewrite smart
+then console say &player Violated Rule (L31)
+then log
+
+# (L32) Match: Moron
+match (?<!'|\w)(m+(\W|_)*o+(\W|_)*r+(\W|_)*o+(\W|_)*n+)(?!\w)
+then rewrite smart person
+then console say &player Violated Rule (L32)
+then log
+
+# (L33) Match: lardo
+match (?<!'|\w)(l+(\W|_)*a+(\W|_)*r+(\W|_)*d+(\W|_)*o+)(?!\w)
+then rewrite magnificent
+then console say &player Violated Rule (L33)
+then log
+
+# (L34) Match: knockers
+match (?<!'|\w)(k+(\W|_)*n+(\W|_)*o+(\W|_)*c+(\W|_)*k+(\W|_)*e+(\W|_)*r+(\W|_)*s+)(?!\w)
+then rewrite beauty
+then console say &player Violated Rule (L34)
+then log
+
+# (L35) Match: pansy
+match (?<!'|\w)(p+(\W|_)*a+(\W|_)*n+(\W|_)*s+(\W|_)*y+)(?!\w)
+then rewrite hero
+then console say &player Violated Rule (L35)
+then log
+
+# (L36) Match: bimbo
+match (?<!'|\w)(b+(\W|_)*i+(\W|_)*m+(\W|_)*b+(\W|_)*o+)
+then rewrite beautiful and smart
+then console say &player Violated Rule (L36)
+then log
+
+# (L37) Match: bafoon
+match (?<!'|\w)(b+(\W|_)*a+(\W|_)*f+(\W|_)*o+(\W|_)*n+)(?!\w)
+then rewrite scientist
+then console say &player Violated Rule (L37)
+then log
+
+# (L38) Match: schlub
+match (?<!'|\w)(s+(\W|_)*c+(\W|_)*h+(\W|_)*l+(\W|_)*u+(\W|_)*b+)(?!\w)
+then rewrite professor
+then console say &player Violated Rule (L38)
+then log
+
+# (L39) Match: Nipple
+match (?<!'|\w)(n+(\W|_)*i+(\W|_)*p+(\W|_)*l+(\W|_)*e+)(?!\w)
+then rewrite chest cavity
+then console say &player Violated Rule (L39)
+then log
+
+# (L40) Match: minx
+match (?<!'|\w)(m+(\W|_)*i+(\W|_)*n+(\W|_)*x+)(?!\w)
+then rewrite 
+then console say &player Violated Rule (L40)
+then log
+
+# (L41) Match: tigress
+match (?<!'|\w)(t+(\W|_)*i+(\W|_)*g+(\W|_)*r+(\W|_)*e+(\W|_)*s+)(?!\w)
+then rewrite ROAR
+then console say &player Violated Rule (L41)
+then log
+
+# (L42) Match: chippy
+match (?<!'|\w)(c+(\W|_)*h+(\W|_)*i+(\W|_)*p+(\W|_)*y+)(?!\w)
+then rewrite unknown
+then console say &player Violated Rule (L42)
+then log
+
+# (L43) Match: vixen
+match (?<!'|\w)(v+(\W|_)*i+(\W|_)*x+(\W|_)*e+(\W|_)*n+)(?!\w)
+then rewrite unknown
+then console say &player Violated Rule (L43)
+then log
+
+# (L44) Match: Nut
+match (?<!'|\w)(n+(\W|_)*u+(\W|_)*t+)(?!\w)
+then rewrite goofball
+then console say &player Violated Rule (L44)
+then log
+
+# (L45) Match: wang
+match (?<!'|\w)(w+(\W|_)*a+(\W|_)*n+(\W|_)*g+)(?!\w)
+then rewrite transformer
+then console say &player Violated Rule (L45)
+then log
+
+# (L46) Advanced Match: weenie, weeny, weener
+match (?<!'|\w)(w+(\W|_)*e+(\W|_)*e+(\W|_)*n+\w*)
+ignore string weens|weened|weensy|weening|weeniest|weensier|weensiest
+then rewrite hotdog
+then console say &player Violated Rule (L46)
+then log
+
+# (L47) Match: snatch
+match (?<!'|\w)(s+(\W|_)*n+(\W|_)*a+(\W|_)*t+(\W|_)*c+(\W|_)*h+)(?!\w)
+then randrep grab|catch|swoop up
+then console say &player Violated Rule (L47)
+then log
+
+# (L48) Match: making out, make out, french kiss
+match (?<!'|\w)(m+(\W|_)*a+(\W|_)*k+(\W|_)*i+(\W|_)*n+(\W|_)*g+(\W|_)*o+(\W|_)*u+(\W|_)*t+)(?!\w)|(?<!'|\w)(m+(\W|_)*a+(\W|_)*k+(\W|_)*e+(\W|_)*o+(\W|_)*u+(\W|_)*t+)(?!\w)|(?<!'|\w)(f+(\W|_)*r+(\W|_)*e+(\W|_)*n+(\W|_)*c+(\W|_)*h+(\W|_)*k+(\W|_)*i+(\W|_)*s+(\W|_)*s+)(?!\w)
+then rewrite kiss
+then console say &player Violated Rule (L48)
+then log
+
+# (L49) Match: hung
+match (?<!'|\w)(h+(\W|_)*u+(\W|_)*n+(\W|_)*g+)(?!\w)
+then rewrite hanged
+then console say &player Violated Rule (L49)
+then log
+
+# (L50) Match: knocked up, knock up
+match (?<!'|\w)(k+(\W|_)*n+(\W|_)*o+(\W|_)*c+(\W|_)*k+(\W|_)*e+(\W|_)*d+(\W|_)*u+(\W|_)*p+)(?!\w)|(?<!'|\w)(k+(\W|_)*n+(\W|_)*o+(\W|_)*c+(\W|_)*k+(\W|_)*\s?(\w+)\s?u+(\W|_)*p+)
+then rewrite knocked on the door
+then console say &player Violated Rule (L50)
+then log
+
+# (L51) Match: hackor, hacker, haxor, haxzor, hacking
+match (?<!'|\w)(h+(\W|_)*a+(\W|_)*c+(\W|_)*k+(\W|_)*(e|o)+(\W|_)*r+\w*)|(h+(\W|_)*a+(\W|_)*x+(\W|_)*z*(\W|_)*o+(\W|_)*r+\w*)|(h+(\W|_)*a+(\W|_)*(c|k)+(\W|_)*i+(\W|_)*n+(\W|_)*g+(\W|_)*)
+then rewrite 
+then console say &player Violated Rule (L51)
+then log
+
+# (L52) Match: Bacterial Vaginosis, Chlamydia, Gonorrhea, Herpes, Human Papillomavirus, Trichomoniasis, Chancroid, Hepatitis, Hepetitis, HIV, AIDS, Lymphogranuloma Venereum, Molluscum Contagiosum, Mucopurulent Cervicitis, Pelvic Inflammatory Disease, Pubic “Crab” Lice, Scabies, Syphilis
+match (?<!'|\w)(Bacterial Vaginosis|Chlamydia|Gonorrhea|Herpes|Human Papillomavirus|Trichomoniasis|Chancroid|Hepatitis|Hepetitis|HIV|AIDS|Lymphogranuloma Venereum|Molluscum Contagiosum|Mucopurulent Cervicitis|Pelvic Inflammatory Disease|Pubic “Crab” Lice|Scabies|Syphilis)(?!\w)
+then rewrite disease
+then console say &player Violated Rule (L52)
+then log
+
+# (L53) Match: STD
+match (?<!'|\w)(s+(\W|_)*t+(\W|_)*d+\w*)
+then rewrite disease
+then console say &player Violated Rule (L53)
+then log
+
+# (L54) Match: i hates you
+match (?<!'|\w)(i+(\W|_)*h+(\W|_)*a+(\W|_)*t+(\W|_)*e+(\W|_)*s+(\W|_)*y+(\W|_)*o+(\W|_)*u)
+then replace I Love You! Marry Me?
+then console say &player Violated Rule (L54)
+then log
+
+# (L55) Match: crapped
+match (?<!'|\w)(C+(\W|_)*r+(\W|_)*a+(\W|_)*p+(\W|_)*p+(\W|_)*e+(\W|_)*d)
+then replace
+then console say &player Violated Rule (L55)
+then log
+
+# (L56) Match: butter
+#match (?<!'|\w)(b+(\W|_)*u+(\W|_)*t+(\W|_)*t+(\W|_)*e+(\W|_)*r)
+#then replace
+#then console say &player Violated Rule (L56)
+#then log
+
+# (L57) Match: hacker
+match (?<!'|\w)(h+(\W|_)*a+(\W|_)*c+(\W|_)*k+(\W|_)*e+(\W|_)*r)
+then replace
+then console say &player Violated Rule (L57)
+then log
+
+# (L58) Match: hacking
+match (?<!'|\w)(h+(\W|_)*a+(\W|_)*c+(\W|_)*k+(\W|_)*i+(\W|_)*n+(\W|_)*g)
+then replace
+then console say &player Violated Rule (L58)
+then log
+
+# (L59) Match: cheater
+match (?<!'|\w)(c+(\W|_)*h+(\W|_)*e+(\W|_)*a+(\W|_)*t+(\W|_)*e+(\W|_)*r)
+then replace
+then console say &player Violated Rule (L59)
+then log
+
+# (L60) Match: cheating
+match (?<!'|\w)(c+(\W|_)*h+(\W|_)*e+(\W|_)*a+(\W|_)*t+(\W|_)*i+(\W|_)*n+(\W|_)*g)
+then replace
+then console say &player Violated Rule (L60)
+then log
+
+# (L61) Match: cheter
+match (?<!'|\w)(c+(\W|_)*h+(\W|_)*e+(\W|_)*t+(\W|_)*e+(\W|_)*r)
+then replace
+then console say &player Violated Rule (L61)
+then log
+
+# (L62) Match: h8
+match (?<!'|\w)(h+(\W|_)*8)
+then replace
+then console say &player Violated Rule (L62)
+then log
+
+# (L63) Match: omigod
+match (?<!'|\w)(O+(\W|_)*M+(\W|_)*I+(\W|_)*G+(\W|_)*O+(\W|_)*D)
+then replace
+then console say &player Violated Rule (L63)
+then log
+
+# (M64) Match: hell ya
+match (?<!'|\w)(h+(\W|_)*e+(\W|_)*l+(\W|_)*(s|z)*+(\W|_)*y+(\W|_)*a+(\W|_)*)
+then replace heck ya
+then console say &player Violated Rule (M64)
+then log
+
+# (L) Match: Open
+#match (?<!'|\w)(
+#then rewrite 
+#then console say &player Violated Rule (L)
+#then log
+
+# (L) Match: Open
+#match (?<!'|\w)(
+#then rewrite 
+#then console say &player Violated Rule (L)
+#then log
+
+#---------------------------------------------------------------------------------
+# Moderate Block List
+#---------------------------------------------------------------------------------
+
+# (M1) Match: hell
+# Will filter out the word hello and help
+match (?<!'|\w)(h+(3|e)+(1|l)+(1|l)+i+(5|s|z)+h+)(?!\w)|(?<!'|\w)(h+(3|e)+(1|l)+(1|l)+(5|s|z)+)(?!\w)|(?<!'|\w)(h+(\W|_)*(e|3)*(\W|_)*(1|l)+(\W|_)*(1|l)+)(?!\w)
+ignore string he'll
+then console say &player Violated Rule (M1)
+then rewrite lake of fire 
+then log
+
+# (M2) Match: boob
+#Filters out bobby.
+match (?<!'|\w)(b+(\W|_)*(0|o)+(\W|_)*(0|o)+(\W|_)*b+((\W|_)*(ies|es|s|y)*))(?!\w)
+then console say &player Violated Rule (M2)
+then rewrite chest
+then log
+
+# (M3-1) Match: dam
+match (?<!'|\w)(d+(\W|_)*a+(\W|_)*m+)(?!\w)
+then rewrite water barrier  
+
+# (M3-2) Advanced Match: damn
+match (?<!'|\w)(d+(\W|_)*a+(\W|_)*m+(\W|_)*\w+)(?!\w)
+ignore string dame|damp|dams|daman|damar|dames|damns|damps|damage|damans|damars|damask|dammar|dammer|damned|damner|damped|dampen|damper|damply|damsel|damson|damaged|damager|damages|damasks|dammars|dammers|damners|damnify|damning|damosel|damozel|dampens|dampers|dampest|damping|dampish|damsels|damsons|damagers|damaging|damasked|damewort|damnably|damneder|damosels|damozels|dampened|dampener|dampings|dampness|damascene|damasking|dameworts|damnation|damnatory|damndests|damnified|damnifies|damningly|dampeners|dampening|damselfly|damagingly|damascened|damascenes|damnations|damnedests|damnifying|dampnesses|damselfish|damascening|damselflies|damnableness|damselfishes|damageability|damnablenesses|damageabilities|
+then console say &player Violated Rule (M3-2)
+then rewrite dang
+then log
+
+# (M3-3) Advanced Match: danm
+match .*(d+(\W|_)*a+(\W|_)*n+(\W|_)*m+).*
+then console say &player Violated Rule (M3-3)
+then rewrite dang
+then log
+
+# (M4) Match: omg, omfg (Oh my god)
+match (?<!'|\w)((0|o)+(\W|_)*m+(\W|_)*f*(\W|_)*g+)
+then rewrite oh my gosh
+then console say &player Violated Rule (M4)
+then log
+
+# (M5) Match: retard
+match (?<!'|\w)(r+(\W|_)*(3|e|i)+(\W|_)*(7|t)+(\W|_)*(3|a|u|e)+(\W|_)*r+(\W|_)*d+(\W|_)*(ed|s)*)(?!\w)
+then rewrite blessed
+then console say &player Violated Rule (M5)
+then log
+
+# (M6) Match: shit, shyte, shiz, chiz
+match (?<!'|\w)(s.h.i.t)|(?<!'|\w)(s h i t)(?!\w)|(?<!'|\w)(s-h-i-t)|(shiat)|(?<!'|\w)(sh it)(?!\w)|(?<!'|\w)((5|s|z)+(\W|_)*h+(y|i|1)+(\W|_)*(7|t)+(\W|_)*y*(\W|_)*s*)(?!\w)|(?<!'|\w)(s+(\W|_)*h+(\W|_)*y+(\W|_)*t+(\W|_)*e+)(?!\w)|(?<!'|\w)((c|s)+(\W|_)*h+(\W|_)*i+(\W|_)*z+(\W|_)*)
+then rewrite 
+then console say &player Violated Rule (M6)
+then log
+
+# (M6-1) Advanced Match: shit (beginning)
+match (?<!'|\w)(shit)
+ignore string mishit|mishits|shittah|shittim|shittahs|shittims|mishitting|shittimwood|shittimwoods
+then console say &player Violated Rule (M6-1)
+then rewrite dang
+then log
+
+# (M6-2) Advanced Match: shit (end)
+match (shit)(?!\w)
+ignore string mishit|mishits|shittah|shittim|shittahs|shittims|mishitting|shittimwood|shittimwoods
+then console say &player Violated Rule (M6-2)
+then rewrite dang
+then log
+
+# (M7) Match: tit
+match (?<!'|\w)((7|t)+(1|i)+(7|t)+)(?!\w)|(?<!'|\w)((7|t)+(1|i)+(7|t)+(5|s|z)+)(?!\w)|(?<!'|\w)((7|t)+(1|i)+(7|t)+y+)(?!\w)
+then rewrite tilt
+then console say &player Violated Rule (M7)
+then log
+
+# (M8) Match: wtf, wth (What the fuck), (What the hell)
+match (?<!'|\w)((v|w)+(\W|_)*(7|t)+(\W|_)*f+)|(?<!'|\w)((v|w)+(\W|_)*(7|t)+(\W|_)*h+)
+then rewrite what the heck
+then console say &player Violated Rule (M8)
+then log
+
+# (M9) Match: oh my god
+match (?<!'|\w)((0|o)+(\W|_)*h+(\W|_)*m+(\W|_)*y+(\W|_)*g+(\W|_)*(0|a|aw|o)+(\W|_)*d+)(?!\w)
+then rewrite oh my gosh
+then console say &player Violated Rule (M9)
+then log
+
+# (M10) Match: shart
+match (?<!'|\w)((5|s|z)+(\W|_)*h+(\W|_)*a+(\W|_)*r+(\W|_)*(7|t)+(\W|_)*i*(\W|_)*n*(\W|_)*g*(\W|_)*e*(\W|_)*d*(\W|_)*s*)(?!\w)
+then rewrite farted
+then console say &player Violated Rule (M10)
+then log
+
+# (M11) Search for XXX
+match (?<!'|\w)(x+(\W|_)*x+(\W|_)*x+)(?!\w)
+then replace 
+then console say &player Violated Rule (M11)
+then log
+
+# (M12) Search for lmao, lmfao, lmfgdao (Laughing My Ass Off)
+match (?<!'|\w)((1|l)+(\W|_)*m+(\W|_)*([a-z])*(\W|_)*a+(\W|_)*(0|o)+)(?!\w)
+then rewrite LOL!
+then console say &player Violated Rule (M12)
+then log
+
+# (M13) Match: god damn
+match (?<!'|\w)(g+(\W|_)*(0|o)(\W|_)*d+(\W|_)*d+(\W|_)*a+(\W|_)*(m|n)+)
+then rewrite He is jealous for me
+then console say &player Violated Rule (M13)
+then log
+
+# (M14) Match: white trash
+match (?<!'|\w)(w+(\W|_)*h+(\W|_)*i+(\W|_)*t+(\W|_)*e+(\W|_)*t+(\W|_)*r+(\W|_)*a+(\W|_)*s+(\W|_)*h+)(?!\w)
+then rewrite human
+then console say &player Violated Rule (M14)
+then log
+
+# (M15) Match: tramp
+match (?<!'|\w)(t+(\W|_)*r+(\W|_)*a+(\W|_)*m+(\W|_)*p+)(?!\w)
+then rewrite elite
+then console say &player Violated Rule (M15)
+then log
+
+# (M16) Match: twit
+match (?<!'|\w)(t+(\W|_)*w+(\W|_)*i+(\W|_)*t+)(?!\w)
+then rewrite elite
+then console say &player Violated Rule (M16)
+then log
+
+# (M17) Match: redneck
+match (?<!'|\w)(r+(\W|_)*e+(\W|_)*d+(\W|_)*n+(\W|_)*e+(\W|_)*c+(\W|_)*k+\w*)
+then rewrite Northern
+then console say &player Violated Rule (M17)
+then log
+
+# (M18) Match: hick
+match (?<!'|\w)(h+(\W|_)*i+(\W|_)*c+(\W|_)*k+\w*)
+then rewrite mom
+then console say &player Violated Rule (M18)
+then log
+
+# (M19) Match: honky
+match (?<!'|\w)(h+(\W|_)*o+(\W|_)*n+(\W|_)*k+(\W|_)*y+)(?!\w)
+then rewrite blare your horn
+then console say &player Violated Rule (M19)
+then log
+
+# (M20) Match: shemale
+match (?<!'|\w)(s+(\W|_)*h+(\W|_)*e+(\W|_)*m+(\W|_)*a+(\W|_)*l+(\W|_)*e+)(?!\w)
+then rewrite gender approperiate
+then console say &player Violated Rule (M20)
+then log
+
+# (M21) Match: hetro
+match (?<!'|\w)(h+(\W|_)*e+(\W|_)*t+(\W|_)*r+(\W|_)*o+)
+then rewrite gender approperiate
+then console say &player Violated Rule (M21)
+then log
+
+# (M22) Match: twink
+match (?<!'|\w)(t+(\W|_)*w+(\W|_)*i+(\W|_)*n+(\W|_)*k+)(?!\w)
+then rewrite youngin
+then console say &player Violated Rule (M22)
+then log
+
+# (M23) Match: condom
+match (?<!'|\w)(c+(\W|_)*o+(\W|_)*n+(\W|_)*d+(\W|_)*o+(\W|_)*m+\w*)
+then rewrite style
+then console say &player Violated Rule (M23)
+then log
+
+# (M24) Match: bugly
+match (?<!'|\w)(b+(\W|_)*u+(\W|_)*g+(\W|_)*l+(\W|_)*y+)(?!\w)
+then rewrite beautiful
+then console say &player Violated Rule (M24)
+then log
+
+# (M25) Match: floozy
+match (?<!'|\w)(f+(\W|_)*l+(\W|_)*o+(\W|_)*z+(\W|_)*y+)(?!\w)
+then rewrite unknown
+then console say &player Violated Rule (M25)
+then log
+
+# (M26) Match: hussy
+match (?<!'|\w)(h+(\W|_)*u+(\W|_)*s+(\W|_)*y+)(?!\w)
+then rewrite cowgirl
+then console say &player Violated Rule (M26)
+then log
+
+# (M27) Match: wench
+match (?<!'|\w)(w+(\W|_)*e+(\W|_)*n+(\W|_)*c+(\W|_)*h+)(?!\w)
+then rewrite boil maker
+then console say &player Violated Rule (M27)
+then log
+
+# (M28) Match: strumpet
+match (?<!'|\w)(s+(\W|_)*t+(\W|_)*r+(\W|_)*u+(\W|_)*m+(\W|_)*p+(\W|_)*e+(\W|_)*t+)(?!\w)
+then rewrite food
+then console say &player Violated Rule (M28)
+then log
+
+# (M29) Match: trollop
+match (?<!'|\w)(t+(\W|_)*r+(\W|_)*o+(\W|_)*l+(\W|_)*o+(\W|_)*p+\w*)
+then rewrite horse
+then console say &player Violated Rule (M29)
+then log
+
+# (M30) Match: biddy
+match (?<!'|\w)(b+(\W|_)*i+(\W|_)*d+(\W|_)*y+)(?!\w)
+then rewrite boo
+then console say &player Violated Rule (M30)
+then log
+
+# (M31) Match: Easy Lay, Easist Lay
+match (?<!'|\w)(e+(\W|_)*a+(\W|_)*s+(\W|_)*y*(\W|_)*i*(\W|_)*e*(\W|_)*s*(\W|_)*t*(\W|_)*l+(\W|_)*a+(\W|_)*y+)(?!\w)
+then rewrite easiest way to get caught
+then console say &player Violated Rule (M31)
+then log
+
+# (M32) Match: menstruation
+match (?<!'|\w)(m+(\W|_)*e+(\W|_)*n+(\W|_)*s+(\W|_)*t+(\W|_)*r+(\W|_)*u+(\W|_)*a+(\W|_)*t+(\W|_)*i+(\W|_)*o+(\W|_)*n+)(?!\w)
+then rewrite yuck
+then console say &player Violated Rule (M32)
+then log
+
+# (M33) Match: wear the rag, wearing the rag
+match (?<!'|\w)(w+(\W|_)*e+(\W|_)*a+(\W|_)*r+(\W|_)*i*(\W|_)*n*(\W|_)*g*(\W|_)*s*(\W|_)*t+(\W|_)*h+(\W|_)*e+(\W|_)*r+(\W|_)*a+(\W|_)*g+)(?!\w)
+then rewrite yuck
+then console say &player Violated Rule (M33)
+then log
+
+# (M34) Match: voyeur
+match (?<!'|\w)(v+(\W|_)*o+(\W|_)*y+(\W|_)*e+(\W|_)*u+(\W|_)*r+)(?!\w)
+then rewrite peeping tom
+then console say &player Violated Rule (M34)
+then log
+
+# (M35) Match: short eyes
+match (?<!'|\w)(s+(\W|_)*h+(\W|_)*o+(\W|_)*r+(\W|_)*t+(\W|_)*e+(\W|_)*y+(\W|_)*e+\w*)
+then rewrite human
+then console say &player Violated Rule (M35)
+then log
+
+# (M36) Match: grope, groping, cop a feel
+match (?<!'|\w)(g+(\W|_)*r+(\W|_)*o+(\W|_)*p+)|(?<!'|\w)(c+(\W|_)*o+(\W|_)*p+(\W|_)*a+(\W|_)*f+(\W|_)*e+(\W|_)*l+(\W|_)*)
+then rewrite highly inapproperiate talk
+then console say &player Violated Rule (M36)
+then log
+
+# (M37) Match: drag queen
+match (?<!'|\w)(d+(\W|_)*r+(\W|_)*a+(\W|_)*g+(\W|_)*q+(\W|_)*u+(\W|_)*e+(\W|_)*e+(\W|_)*n+)
+then rewrite opposite day
+then console say &player Violated Rule (M37)
+then log
+
+# (M38) Match: fairy
+match (?<!'|\w)(f+(\W|_)*a+(\W|_)*i+(\W|_)*r+(\W|_)*y+)(?!\w)
+then rewrite fairly
+then console say &player Violated Rule (M38)
+then log
+
+# (M39) Match: French letter
+match (f+(\W|_)*r+(\W|_)*e+(\W|_)*n+(\W|_)*c+(\W|_)*h+(\W|_)*l+(\W|_)*e+(\W|_)*t+(\W|_)*e+(\W|_)*r+)
+then rewrite United States Postal Service
+then console say &player Violated Rule (M39)
+then log
+
+# (M40) Match: Love + Glove
+match (?<!'|\w)((love)+(\W|\d|_|\w)*(glove))(?!\w)|((glove)+(\W|\d|_|\w)*(love))(?!\w)
+then rewrite I am a chicken
+then console say &player Violated Rule (M40)
+then log
+
+# (M41) Match: rubber
+match (?<!'|\w)(r+(\W|_)*u+(\W|_)*b+(\W|_)*e+(\W|_)*r+)(?!\w)
+then rewrite solution
+then console say &player Violated Rule (M41)
+then log
+
+# (M42) Match: pocket pool
+match (?<!'|\w)(p+(\W|_)*o+(\W|_)*c+(\W|_)*k+(\W|_)*e+(\W|_)*t+(\W|_)*p+(\W|_)*o+(\W|_)*l+)(?!\w)
+then rewrite darts
+then console say &player Violated Rule (M42)
+then log
+
+# (M43) Match: love juice
+match (?<!'|\w)(l+(\W|_)*o+(\W|_)*v+(\W|_)*e+(\W|_)*j+(\W|_)*u+(\W|_)*i+(\W|_)*c+(\W|_)*e+)(?!\w)
+then rewrite Orange Juice
+then console say &player Violated Rule (M43)
+then log
+
+# (M44) Match: gonads, gones
+match (?<!'|\w)(g+(\W|_)*o+(\W|_)*n+(\W|_)*a+(\W|_)*d+(\W|_)*s*)(?!\w)|(?<!'|\w)(g+(\W|_)*o+(\W|_)*n+(\W|_)*e+(\W|_)*s+)(?!\w)
+then replace 
+then console say &player Violated Rule (M44)
+then log
+
+# (M45) Match: flipping the bird
+match (?<!'|\w)(f+(\W|_)*l+(\W|_)*i+(\W|_)*p+(\W|_)*i+(\W|_)*n+(\W|_)*g+(\W|_)*t+(\W|_)*h+(\W|_)*e+(\W|_)*b+(\W|_)*i+(\W|_)*r+(\W|_)*d+)(?!\w)
+then rewrite feeding the bird
+then console say &player Violated Rule (M45)
+then log
+
+# (M46) Match: fudge packer
+match (?<!'|\w)(f+(\W|_)*u+(\W|_)*d*(\W|_)*g+(\W|_)*e*(\W|_)*p+(\W|_)*a+(\W|_)*c+(\W|_)*k+(\W|_)*e*(\W|_)*r*(\W|_)*i*(\W|_)*n*(\W|_)*g*)(?!\w)
+then rewrite I eat special fudge
+then console say &player Violated Rule (M46)
+then log
+
+# (M47) Match: Orafis, Orifis, Orifice, Orafice, Oriface, oraface
+match (?<!'|\w)(o+(\W|_)*r+(\W|_)*(a|i)+(\W|_)*f+(\W|_)*(a|i)+(\W|_)*(c|s)+(\W|_)*e*(\W|_)*)
+then rewrite opening
+then console say &player Violated Rule (M47)
+then log
+
+# (M48) Match: Skankey, Skankee, Skanky
+match (?<!'|\w)(s+(\W|_)*k+(\W|_)*a+(\W|_)*n+(\W|_)*k+(\W|_)*e*(\W|_)*y*)(?!\w)
+then rewrite dirty
+then console say &player Violated Rule (M48)
+then log
+
+# (M49) Match: son of a
+match (?<!'|\w)(s+(\W|_)*o+(\W|_)*n+(\W|_)*o+(\W|_)*f+(\W|_)*a+(\W|_)*)
+then rewrite ding!
+then console say &player Violated Rule (M49)
+then log
+
+# (M50) Match: pimp
+match (?<!'|\w)(p+(\W|_)*i+(\W|_)*m+(\W|_)*p+)
+then rewrite cheese
+then console say &player Violated Rule (M50)
+then log
+
+# (M51) Match: teet, teat
+match (?<!'|\w)(t+(\W|_)*e+(\W|_)*a*(\W|_)*t+(\W|_)*s*)(?!\w)
+then rewrite hairy
+then console say &player Violated Rule (M51)
+then log
+
+# (M52) Match: xrated
+match (?<!'|\w)(e*(\W|_)*x+(\W|_)*r+(\W|_)*a+(\W|_)*t+(\W|_)*e+(\W|_)*d*)(?!\w)
+then rewrite Wednesday
+then console say &player Violated Rule (M52)
+then log
+
+# (M53) Match: weed
+match (?<!'|\w)(w+(\W|_)*e+(\W|_)*e+(\W|_)*d+(\W|_)*)
+then rewrite unwanted plant
+then console say &player Violated Rule (M53)
+then log
+
+# (M54) Match: doggie (doggy) style
+match (?<!'|\w)(d+(\W|_)*o+(\W|_)*g+(\W|_)*i*(\W|_)*e*(\W|_)*y*(\W|_)*s+(\W|_)*t+(\W|_)*y+(\W|_)*l+(\W|_)*e+)(?!\w)
+then rewrite I Love This Filter
+then console say &player Violated Rule (M54)
+then log
+
+# (M55) Match: sucks balls, suck balls
+match (?<!'|\w)(s+(\W|_)*u+(\W|_)*c+(\W|_)*k+(\W|_)*s*(\W|_)*\s*\w*\s*b+(\W|_)*a+(\W|_)*l+(\W|_)*l\s*)
+then replace
+then console say &player Violated Rule (M55)
+then log
+
+# (M57) Match: he\\
+match (?<!'|\w)(h+(\W|_)*e+(\W|_)*\\+(\W|_)*\\)
+then replace
+then console say &player Violated Rule (M57)
+then log
+
+# (M58) Match: nipples
+match (?<!'|\w)(n+(\W|_)*i+(\W|_)*p+(\W|_)*p+(\W|_)*l+(\W|_)*e+(\W|_)*s)
+then replace
+then console say &player Violated Rule (M58)
+then log
+
+# (M59) Match: ( . )
+match \(\s+\.+\s+\)
+then replace 
+then console say &player Violated Rule (M59)
+then log
+
+# (M60) Match: he//
+match (?<!'|\w)(h+(\W|_)*e+(\W|_)*\/+(\W|_)*\/)
+then replace
+then console say &player Violated Rule (M60)
+then log
+
+# (M  ) Match: Open
+#match (?<!'|\w)(
+#then rewrite 
+#then console say &player Violated Rule (M  )
+#then log
+
+
+#---------------------------------------------------------------------------------
+# Severe Block List
+#---------------------------------------------------------------------------------
+
+# (S1) Match: nymph
+match (?<!'|\w)(n+(\W|_)*y+(\W|_)*m+(\W|_)*p+(\W|_)*h+)
+then replace 
+then console say &player Violated Rule (S1)
+then log
+
+# (S2) Match: ass, ashole, ahole
+match (?<!'|\w)(a+(\W|_)*s+(\W|_)*s+)(?!\w)|(?<!'|\w)(a+(\W|_)*s+(\W|_)*h+(\W|_)*o+(\W|_)*l+(\W|_)*e+(\W|_)*s*)(?!\w)|(?<!'|\w)(a(\.|\-|\*|_|\^|\+|\~|\`|\=|\,|\&|\@)*h+(\W|_)*o+(\W|_)*l+(\W|_)*e+)(?!\w)
+then console say &player Violated Rule (S2)
+then replace rump
+then log
+
+# (S2-1) Advanced Match: ass (ending)
+match (a+(\W|_)*s+(\W|_)*s+)(?!\w)
+ignore string bass|lass|mass|pass|sass|tass|amass|brass|class|crass|glass|grass|kvass|quass|trass|admass|bagass|bypass|camass|harass|kavass|megass|morass|repass|strass|biomass|canvass|carcass|compass|cuirass|cutlass|declass|jiveass|matrass|outpass|subbass|surpass|wiseass|zebrass|cutgrass|eelgrass|eyeglass|galleass|galliass|landmass|mattrass|misclass|nonclass|nutgrass|outclass|overpass|pingrass|raygrass|ribgrass|ryegrass|spyglass|subclass|sunglass|trespass|windlass|bluegrass|cordgrass|crabgrass|embarrass|encompass|hourglass|isinglass|knotgrass|sandglass|underpass|wineglass|bromegrass|bunchgrass|contrabass|fiberglass|fibreglass|goosegrass|groundmass|interclass|lemongrass|plateglass|superclass|underclass|witchgrass|gallowglass|gyrocompass|peppergrass|switchgrass|disembarrass|hardinggrass|johnsongrass|thoroughbass|weatherglass
+then console say &player Violated Rule (S2-1)
+then replace rump
+then log
+
+# (S2-2) Advanced Match: ass (beginning)
+match (?<!'|\w)(a+(\W|_)*s+(\W|_)*s+\w*)
+ignore string as |assai|assay|asset|assail|assais|assays|assent|assert|assess|assets|assign|assist|assize|assoil|assort|assume|assure|assagai|assails|assault|assayed|assayer|assegai|assents|asserts|assigns|assists|assizes|assoils|assorts|assuage|assumed|assumer|assumes|assured|assurer|assures|assuror|assagais|assailed|assailer|assassin|assaults|assayers|assaying|assegais|assemble|assembly|assented|assenter|assentor|asserted|asserter|assertor|assessed|assesses|assessor|assignat|assigned|assignee|assigner|assignor|assisted|assister|assistor|assoiled|assonant|assorted|assorter|assuaged|assuages|assumers|assuming|assureds|assurers|assuring|assurors|assagaied|assailant|assailers|assailing|assassins|assaulted|assaulter|assegaied|assembled|assembler|assembles|assenters|assenting|assentors|asserters|asserting|assertion|assertive|assertors|assessing|assessors|assiduity|assiduous|assignats|assignees|assigners|assigning|assignors|assistant|assisters|assisting|assistors|associate|assoiling|assonance|assonants|assorters|assorting|assuaging|assuasive|assumable|assumably|assumpsit|assurance|assuredly|assurgent|assagaiing|assailable|assailants|assaulters|assaulting|assaultive|assegaiing|assemblage|assemblers|assemblies|assembling|assertedly|assertions|assessable|assessment|asseverate|assignable|assignment|assimilate|assistance|assistants|associated|associates|assoilment|assonances|assonantal|assortment|assumpsits|assumption|assumptive|assurancesassassinate|assemblages|assemblyman|assemblymen|assentation|assertively|assessments|asseverated|asseverates|assiduities|assiduously|assignation|assignments|assimilable|assimilated|assimilates|assimilator|assistances|associating|association|associative|assoilments|assortative|assortments|assuagement|assumptions|assuredness|assassinated|assassinates|assassinator|assaultively|assemblagist|assentations|asseverating|asseveration|asseverative|assignations|assimilating|assimilation|assimilative|assimilators|assimilatory|associations|assuagements|assumability|assassinating|assassination|assassinators|assemblagists|assemblywoman|assemblywomen|assertiveness|asseverations|assiduousness|assignability|assimilations|assistantship|associateship|associational|associatively|associativity|assortatively|assurednesses|assassinations|assaultiveness|assimilability|assistantships|associateships|associationism|associationist|assumabilities|assertivenesses|assiduousnesses|assignabilities|assimilationism|assimilationist|associationisms|associationists|associativities|assaultivenesses|assimilabilities|assimilationisms|assimilationists|associationistic|as soon as
+then console say &player Violated Rule (S2-2)
+then replace rump
+then log
+
+# (S3) Advanced Match: arse, anus
+match (a+(\W|_)*r+(\W|_)*s+(\W|_)*e+\w*)|(?<!'|\w)(a+(\W|_)*n+(\W|_)*u+(\W|_)*(5|s|z)+(\W|_)*(3|e|u)*(\W|_)*(s|z)*)(?!\w)
+ignore string carse|marse|parse|arseno|carses|coarse|hearse|hoarse|marses|parsec|parsed|parser|parses|sarsen|sparse|arsenal|arsenic|coarsen|coarser|hearsed|hearses|hoarsen|hoarser|parsecs|parsers|sarsens|sparser|arsenals|arsenate|arsenics|arsenide|arsenite|arsenous|coarsely|coarsens|coarsest|hoarsely|hoarsens|hoarsest|misparse|rehearse|sarsenet|sparsely|sparsest|arsenates|arsenical|arsenides|arsenious|arsenites|catharses|coarsened|farseeing|hoarsened|katharses|misparsed|misparses|rehearsed|rehearser|rehearses|sarsenets|arsenicals|coarseness|coarsening|hoarseness|hoarsening|kiloparsec|megaparsec|rehearsers|sparseness|kiloparsecs|megaparsecs|unrehearsed|arsenopyrite|coarsenesses|hoarsenesses|sparsenesses|arsenopyrites
+then console say &player Violated Rule (S3)
+then replace 
+then log
+
+# (S4) Match: bastard, basterd
+match (?<!'|\w)(b+(\W|_)*a+(\W|_)*(5|s|z)+(\W|_)*(7|t)+(\W|_)*(3|a|e|u)+(\W|_)*r+(\W|_)*d+(\W|_)*\w*)(?!\w)
+then console say &player Violated Rule (S4)
+then replace  
+then log
+
+# (S5) Match: bitch, beeotch, biotch, beeoch, bioch
+match (?<!'|\w)(b+(\W|_)*i+(\W|_)*a*(\W|_)*(7|t)+(\W|_)*(c|k)+(\W|_)*h+(\W|_)*(3|e)*(\W|_)*(s|z)*)(?!\w)|(?<!'|\w)(b+(\W|_)*e+(\W|_)*o+(\W|_)*t*(\W|_)*c+(\W|_)*h+)(?!\w)|(?<!'|\w)(b+(\W|_)*i+(\W|_)*o+(\W|_)*t*(\W|_)*c+(\W|_)*h+)(?!\w)
+then replace 
+then console say &player Violated Rule (S5)
+then log
+
+# (S6) Match: blowjob, fellatio, handjob
+match (?<!'|\w)(b+(\W|_)*(1|l)+(\W|_)*(0|o)+(\W|_)*w+(\W|_)*j+(\W|_)*(0|o)+(\W|_)*b+(\W|_)*(s|z)*)(?!\w)|(?<!'|\w)(b+(\W|_)*j+)(?!\w)|(?<!'|\w)(b+(\W|_)*j+(\W|_)*(0|o)+(\W|_)*b+(\W|_)*(s|z)*)(?!\w)|(f+(\W|_)*(3|e)+(\W|_)*(1|l)*(\W|_)*(1|l)+(\W|_)*a+(\W|_)*(7|t)+(\W|_)*(1|i)+(\W|_)*(0|o)+)|(?<!'|\w)(h+(\W|_)*a+(\W|_)*n+(\W|_)*d+(\W|_)*j+(\W|_)*(0|o)+(\W|_)*b+(\W|_)*(s|z)*)(?!\w)
+then replace 
+then console say &player Violated Rule (S6)
+then log
+
+# (S7) Match: bollocks
+match (?<!'|\w)(b+(\W|_)*(0|o)+(\W|_)*(1|l)+(\W|_)*(1|l)+(\W|_)*(0|o)+(\W|_)*(c|k)+(\W|_)*s*)(?!\w)
+then console say &player Violated Rule (S7)
+then replace 
+then log
+
+# (S8) Match: boner
+match (?<!'|\w)(b+(\W|_)*(0|o)+(\W|_)*n+(\W|_)*(3|e)+(\W|_)*r+(\W|_)*s*)(?!\w)
+then console say &player Violated Rule (S8)
+then replace 
+then log
+
+# (S9) Match: knuckle dragger
+match (?<!'|\w)(k+(\W|_)*n+(\W|_)*u+(\W|_)*c+(\W|_)*k+(\W|_)*l+(\W|_)*e+(\W|_)*d+(\W|_)*r+(\W|_)*a+(\W|_)*g+(\W|_)*e+(\W|_)*r+)(?!\w)
+then replace 
+then console say &player Violated Rule (S9)
+then log
+
+# (S10) Match: cock, cawk, kock, cocksucking
+match (?<!'|\w)((c|k)+(\W|_)*(0|o)+(\W|_)*(c|k)+(\W|_)*(c|k)+\w*)|((c|k)+(\W|_)*a+(\W|_)*w+(\W|_)*(c|k)+)(?!\w)|(c+(\W|_)*o+(\W|_)*c+(\W|_)*k+(\W|_)*s+(\W|_)*u+(\W|_)*c+(\W|_)*k+(\W|_)*i+(\W|_)*n+(\W|_)*g+(\W|_)*)
+ignore string cocked|cocker|cockle|cockeye|cockily|cocking|cockled|cockles|cockney|cockpit|cockaded|cockades|cockapoo|cockatoo|cockbill|cockboat|cockcrow|cockered|cockerel|cockeyed|cockeyes|cockling|cockloft|cockneys|cockpits|cockshut|cockspur|cocksure|cocktail|cockamamy|cockapoos|cockatiel|cockatoos|cockbills|cockboats|cockcrows|cockerels|cockering|cocklebur|cocklofts|cockneyfy|cockroach|cockscomb|cocksfoot|cockshies|cockshuts|cockspurs|cocktails|cockalorum|cockamamie|cockatiels|cockatrice|cockbilled|cockchafer|cockeyedly|cockleburs|cockneyish|cockneyism|cockscombs|cocksfoots|cocksurely|cocktailed|cockalorums|cockatrices|cockbilling|cockchafers|cockleshell|cockneyfied|cockneyfies|cockneyisms|cockroaches|cocktailing|cockeyedness|cockleshells|cockneyfying|cocksureness|cockeyednesses|cocksurenesses
+then replace 
+then console say &player Violated Rule (S10)
+then log
+
+# (S11) Match: clit, cunt, cnts
+match (?<!'|\w)((c|k)+(\W|_)*(1|l)+(\W|_)*(1|i)+(\W|_)*(7|t)+(\W|_)*\w*)|(?<!'|\w)((c|k)+(\W|_)*u+(\W|_)*n+(\W|_)*(7|t)+\w*)|(?<!'|\w)(c+(\W|_)*n+(\W|_)*t+(\W|_)*s+)(?!\w)
+then replace 
+then console say &player Violated Rule (S11)
+then log
+
+# (S12) Match: religitard
+match (?<!'|\w)(r+(\W|_)*e+(\W|_)*l+(\W|_)*i+(\W|_)*g+(\W|_)*i+(\W|_)*t+(\W|_)*a+(\W|_)*r+(\W|_)*d+)(?!\w)
+then replace 
+then console say &player Violated Rule (S12)
+then log
+
+# (S13) Match: cum, dick, dike, hardon, and dildo
+match (?<!'|\w)((c|k)+(\W|_)*u+(\W|_)*m+(\W|_)*m*(\W|_)*i*(\W|_)*n*(\W|_)*g*)(?!\w)|(?<!'|\w)(d+(\W|_)*(1|i)+(\W|_)*(c|k)+(\W|_)*(c|k)+(\W|_)*s*)(?!\w)|(?<!'|\w)(d+(\W|_)*(1|i)+(\W|_)*k+(\W|_)*(3|e)+(\W|_)*s*)(?!\w)|(?<!'|\w)(d+(\W|_)*(1|i)+(\W|_)*(1|l)+(\W|_)*(1|l)*(\W|_)*d+(\W|_)*(0|o)+(\W|_)*s*)(?!\w)|(?<!'|\w)(d+(\W|_)*y+(\W|_)*(c|k)+(\W|_)*(3|e)+)(?!\w)|(?<!'|\w)(h+(\W|_)*a+(\W|_)*r+(\W|_)*d+(\.|\-|\*|_|\^|\+|\~|\`|\=|\,|\&|\@)*(0|o)+(\W|_)*n+(\W|_)*s*)(?!\w)
+then replace 
+then console say &player Violated Rule (S13)
+then log
+
+# (S13-1) Advance Match: dick
+match (d+(\W|_)*i+(\W|_)*c+(\W|_)*k+(\W|_)*)
+ignore string dicky|dicker|dickey|dickie|medick|dickens|dickers|dickeys|dickier|dickies|medicks|zaddick|benedick|dickered|benedicks|dickenses|dickering|dickcissel|dickcissels
+then replace 
+then console say &player Violated Rule (S13-1)
+then log
+
+# (S14) Match: ejaculate
+match (?<!'|\w)((3|e)+(\W|_)*j+(\W|_)*a+(\W|_)*(c|k)+(\W|_)*u+(\W|_)*(1|l)+(\W|_)*a+(\W|_)*(7|t)+(\W|_)*(3|e)*(\W|_)*i*(\W|_)*o*(\W|_)*n*(\W|_)*g*)(?!\w)
+then replace 
+then console say &player Violated Rule (S14)
+then log
+
+# (S15) Match: enema
+match (?<!'|\w)((3|e)+(\W|_)*n+(\W|_)*(3|e)+(\W|_)*m+(\W|_)*a+(\W|_)*s*)(?!\w)
+then replace 
+then console say &player Violated Rule (S15)
+then log
+
+# (S16) Match: fag
+match (?<!'|\w)(f+(\W|_)*a+(\W|_)*g+)|(?<!'|\w)(f+(\W|_)*a+(\W|_)*(1|i)+(\W|_)*g+)|(?<!'|\w)(f+(\W|_)*(3|e)+(\W|_)*g+)
+ignore string leafage|of a
+then replace 
+then console say &player Violated Rule (S16)
+then log
+
+# (S17) Match: fuck, fcuk, fuq, fck
+match (?<!'|\w)(f+(\W|_)*u+)(?!\w)|(f+(\W|_)*u+(\W|_)*(c|k)+)|(?<!'|\w)(f+(\W|_)*(3|e)+(\W|_)*(c|k)+(\W|_)*(c|k)+(\W|_)*i*(\W|_)*n*(\W|_)*g*)(?!\w)|(?<!'|\w)(f+(\W|_)*u+(\W|_)*g+(\W|_)*(1|l)+(\W|_)*y+)(?!\w)|(?<!'|\w)(f+(\W|_)*v+(\W|_)*(c|k)+(\W|_)*(c|k)+)|(f+(\W|_)*u+(\W|_)*x+(\W|_)*r+)|(f+(\W|_)*c+(\W|_)*u+(\W|_)*k+(\W|_)*)|(f+(\W|_)*u+(\W|_)*q+(\W|_)*\w*)|(f+(\W|_)*c+(\W|_)*k+(\W|_)*\w*)
+ignore string afk
+then replace 
+then console say &player Violated Rule (S17)
+then log
+
+# (S18) Match: gay, lez, lesbian, lezzian, lesbo
+match (?<!'|\w)(g+(\W|_)*a+(\W|_)*y+)|(?<!'|\w)(g+(\W|_)*(3|e)+(\W|_)*y+)|(?<!'|\w)(g+(\W|_)*h+(\W|_)*(3|e|a)+(\W|_)*y+)(?!\w)|(?<!'|\w)((1|l)+(\W|_)*(3|e)+(\W|_)*(5|s|z)+(\W|_)*b+(\W|_)*i+(\W|_)*a+(\W|_)*n+(\W|_)*s*)(?!\w)|(?<!'|\w)(g+(\W|_)*(3|e)+(\W|_)*h+(\W|_)*y+)|(?<!'|\w)(l+(\W|_)*e+(\W|_)*z+(\W|_)*i*(\W|_)*a*(\W|_)*n*)(?!\w)|(?<!'|\w)(l+(\W|_)*e+(\W|_)*s+(\W|_)*b+(\W|_)*o+)(?!\w)
+then replace 
+then console say &player Violated Rule (S18)
+then log
+
+# (S19) Match: wanksta
+match (w+(\W|_)*a+(\W|_)*n+(\W|_)*k+(\W|_)*s+(\W|_)*t+(\W|_)*a+)(?!\w)
+then replace 
+then console say &player Violated Rule (S19)
+then log
+
+# (S20) Match: homo
+#Filter out Sophomore
+match (?<!'|\w)(h+(\W|_)*(0|o)+(\W|_)*m+(\W|_)*(0|o)+).*
+then rewrite Person of interest
+then console say &player Violated Rule (S20)
+then log
+
+# (S21) Match: jackoff, jerkoff, jizz, jiss
+match (?<!'|\w)(j+(\W|_)*a+(\W|_)*(c|k)+(\W|_)*(0|o)+(\W|_)*f+(\W|_)*f+)(?!\w)|(?<!'|\w)(j+(\W|_)*(3|a|e)+(\W|_)*r+(\W|_)*(c|k)+(\W|_)*(0|o)+(\W|_)*f+(\W|_)*f+)|(?<!'|\w)(j+(\W|_)*(1|i)+(\W|_)*(5|s|z)+(\W|_)*(5|s|z)+(\W|_)*i*(\W|_)*n*(\W|_)*g*)(?!\w)
+then replace 
+then console say &player Violated Rule (S21)
+then log
+
+# (S22) Match:waspy
+match (?<!'|\w)(w+(\W|_)*a+(\W|_)*s+(\W|_)*p+(\W|_)*y+)(?!\w)
+then replace 
+then console say &player Violated Rule (S22)
+then log
+
+# (S23) Match: masturbate, masterbait, mastrbate, wank
+#Allow Master
+match (?<!'|\w)(m+(\W|_)*a+(\W|_)*(5|s|z)+(\W|_)*(7|t)+(\W|_)*(e|u)*(\W|_)*r+(\W|_)*b+(\W|_)*a+(\W|_)*i*(\W|_)*(7|t)+(\W|_)*(3|e|o)*(\W|_)*i*(\W|_)*n*(\W|_)*g*(\W|_)*r*(\W|_)*s*(\W|_)*)|(?<!'|\w)(w+(\W|_)*a+(\W|_)*n+(\W|_)*(c|k)+(\W|_)*i*(\W|_)*n*(\W|_)*g*(\W|_)*e*(\W|_)*r*(\W|_)*s*)(?!\w)
+then replace 
+then console say &player Violated Rule (S23)
+then log
+
+# (S24) Match: mofo
+match (?<!'|\w)(m+(\W|_)*(0|o)+(\W|_)*f+(\W|_)*(0|o)+(\W|_)*s*)(?!\w)
+then replace 
+then console say &player Violated Rule (S24)
+then log
+
+# (S25) Match: nazi
+match (?<!'|\w)(n+(\W|_)*a+(\W|_)*z+(\W|_)*(1|i)+(\W|_)*s*)(?!\w)
+then replace 
+then console say &player Violated Rule (S25)
+then log
+
+# (S26) Match: nigger
+match (?<!'|\w)(n+(\W|_)*(1|i)+(\W|_)*g+(\W|_)*g+)|(?<!'|\w)(n+(\W|_)*(3|e)+(\W|_)*g+(\W|_)*g+)|(?<!'|\w)(n+(\W|_)*g+(\W|_)*r+)(?!\w)|(?<!'|\w)(n+(\W|_)*(1|i)+(\W|_)*g+(\W|_)*r+)|(?<!'|\w)(n+(\W|_)*(3|e)+(\W|_)*g+(\W|_)*r+)|(?<!'|\w)(n+(\W|_)*(1|i)+(\W|_)*g+(\W|_)*(3|e)+(\W|_)*r+)(?!\w)|(?<!'|\w)(n+(\W|_)*(1|i)+(\W|_)*g+(\W|_)*a+)|(?<!'|\w)(n+(\W|_)*(1|i)+(\W|_)*g+(\W|_)*(1|l)+)|(?<!'|\w)(n+(\W|_)*(1|i)+(\W|_)*g+(\W|_)*u+(\W|_)*r+)
+then replace 
+then console say &player Violated Rule (S26)
+then log
+
+# (S27) Match: Queef, Qweef, Kaweef, Kweef, Caweef, Cweef
+match (?<!'|\w)((caw|cw|kaw|kw|qu|quw|qw)+(\W|_)*e+(\W|_)*f+)(?!\w)
+then replace 
+then console say &player Violated Rule (S27)
+then log
+
+# (S28) Match: Ball Sack, Ballsacking
+match (?<!'|\w)(b+(\W|_)*a+(\W|_)*l+(\W|_)*s+(\W|_)*a+(\W|_)*c*(\W|_)*k*(\W|_)*i*(\W|_)*n*(\W|_)*g*)(?!\w)
+then replace 
+then console say &player Violated Rule (S28)
+then log
+
+# (S29) Match: Carpet Eater, Carpet Muncher
+match (?<!'|\w)(c+(\W|_)*a+(\W|_)*r+(\W|_)*p+(\W|_)*e+(\W|_)*t+(\W|_)*(eater|muncher)+)(?!\w)
+then replace 
+then console say &player Violated Rule (S29)
+then log
+
+# (S30) Match: orgasm, orgy
+#Allow Smorgasbord
+match (?<!'|\w)((0|o)+(\W|_)*r+(\W|_)*g+(\W|_)*a+(\W|_)*(5|s|z)+(\W|_)*(i|u|o|a)*(\W|_)*m+(\W|_)*i*(\W|_)*n*(\W|_)*g*(\W|_)*s*)(?!\w)|(?<!'|\w)((0|o)+(\W|_)*r+(\W|_)*g+(\W|_)*(ie|y)+(\W|_)*s*)(?!\w)
+then replace 
+then console say &player Violated Rule (S30)
+then log
+
+# (S31) Match: penis
+match (?<!'|\w)(p+(\W|_)*(e|i)+(\W|_)*n+(\W|_)*(i|u|a|1)+(\W|_)*(5|s|z)+)(?!\w)
+ignore string pen is
+then replace 
+then console say &player Violated Rule (S31)
+then log
+
+# (S32) Match: phuck (fuck)
+match (?<!'|\w)(p+(\W|_)*h+(\W|_)*u+(\W|_)*(c|k)*(\W|_)*(c|k|v|x)+)
+then replace 
+then console say &player Violated Rule (S32)
+then log
+match (d+(\W|_)*o+(\W|_)*n+(\W|_)*a+(\W|_)*t+(\W|_)*e)
+then warn &bPl&bea&bse&b Co&bns&bi&bde&br &bS&bup&bp&bo&brt&bi&bng M&by W&bor&bk&b: h&bt&btp&b:/&b/f&bnd&b.u&bs/c&b/0&bQt&bL&b4
+then log
+
+# (S33) Match: piss
+match (?<!'|\w)(p+(\W|_)*(1|i)+(\W|_)*(5|s|z)+(\W|_)*(5|s|z)+(\W|_)*e*(\W|_)*i*(\W|_)*n*(\W|_)*g*(\W|_)*d*(\W|_)*s*(\W|_)*(0|0)*(\W|_)*f*)(?!\w)
+then replace 
+then console say &player Violated Rule (S33)
+then log
+
+# (S34) Match: porn, pron, pr0n, prno
+match (?<!'|\w)(p+(\W|_)*(0|o)+(\W|_)*r+(\W|_)*n+(\W|_)*(0|o)*(\W|_)*(5|s|z)*)(?!\w)|(?<!'|\w)(p+(\W|_)*r+(\W|_)*(0|o)+(\W|_)*n+(\W|_)*(0|o)*(\W|_)*(5|s|z)*)(?!\w)|(?<!'|\w)(p+(\W|_)*r+(\W|_)*n+(\W|_)*o+)(?!\w)
+then replace 
+then console say &player Violated Rule (S34)
+then log
+
+# (S35) Match: pussy, pusse, 
+match (?<!'|\w)(p+(\W|_)*u+(\W|_)*(5|s|z)*(\W|_)*(5|s|z)+(\W|_)*(y|e|ie|ies)+)(?!\w)
+then rewrite cute fluffy kitty
+then console say &player Violated Rule (S35)
+then log
+
+# (S36) Match: queer
+match (?<!'|\w)(q+(\W|_)*(w|u|i|e)+(\W|_)*r+(\W|_)*s*)(?!\w)
+then replace 
+then console say &player Violated Rule (S36)
+then log
+
+# (S37) Match: rectum
+match (?<!'|\w)(r+(\W|_)*w*(\W|_)*(3|e)+(\W|_)*(c|k)+(\W|_)*(c|k)*(\W|_)*(7|t)+(\W|_)*(0|o|u)*(\W|_)*m+(\W|_)*s*)(?!\w)
+then rewrite bottom
+then console say &player Violated Rule (S37)
+then log
+
+# (S38) Match: Dirty Sanchez
+match (?<!'|\w)(d+(\W|_)*i+(\W|_)*r+(\W|_)*t+(\W|_)*y+(\W|_)*s+(\W|_)*a+(\W|_)*n+(\W|_)*c+(\W|_)*h+(\W|_)*e+(\W|_)*z+)(?!\w)
+then replace 
+then console say &player Violated Rule (S38)
+then log
+
+# (S39) Match: rimjob, scrotum
+match (?<!'|\w)(r+(\W|_)*(1|i)+(\W|_)*m+(\W|_)*j+(\W|_)*(0|o)+(\W|_)*b+(\W|_)*s*)(?!\w)|(?<!'|\w)((5|s|z)+(\W|_)*(c|k)+(\W|_)*r+(\W|_)*(0|o|u)+(\W|_)*(7|t)+(\W|_)*(3|e|u)+(\W|_)*m+)(?!\w)
+then replace 
+then console say &player Violated Rule (S39)
+then log
+
+# EpicATrain is the author of this language filter.
+# Feel free to contact me at atrain nospacehere online [at] gmail (dot) com
+match ^(\.\.author)$
+then rewrite I have initiated the ..author command.
+then console say EpicATrain is the Author of This Epic Language Filter!
+
+match (\.\.cls)
+then rewrite ok
+require user EpicATrain
+then console pfcls
+
+match (\.\.cls)
+then rewrite ok
+require user Kellassy
+then console pfcls
+
+# (S40) Match: semen
+#Allow basement
+match (?<!'|\w)((5|s|z)+(\W|_)*(3|e)+(\W|_)*m+(\W|_)*(3|e|a)+(\W|_)*n+)(?!\w)
+then replace 
+then console say &player Violated Rule (S40)
+then log
+
+# (S41) Match: sex, sexes, sexy, sexual
+match (?<!'|\w)((5|s|z)+(\W|_)*(3|e)+(\W|_)*x+(\W|_)*e*(\W|_)*s*(\W|_)*y*)(?!\w)|(s+(\W|_)*e+(\W|_)*x+(\W|_)*u+(\W|_)*a+(\W|_)*l+\w*)
+ignore string see XD
+then replace 
+then console say &player Violated Rule (S41)
+then log
+
+# (S42) Match: Golden Shower
+match (?<!'|\w)(g+(\W|_)*o+(\W|_)*l+(\W|_)*d+(\W|_)*e+(\W|_)*n+(\W|_)*s+(\W|_)*h+(\W|_)*o+(\W|_)*w+(\W|_)*e+(\W|_)*r+)(?!\w)
+then replace 
+then console say &player Violated Rule (S42)
+then log
+
+# (S43) Match: skank, slut, twat
+match (?<!'|\w)((5|s|z)+(\W|_)*(c|k)+(\W|_)*a+(\W|_)*n+(\W|_)*(c|k)+(\W|_)*y*(\W|_)*s*)(?!\w)|(?<!'|\w)((5|s|z)+(\W|_)*(1|l)+(\W|_)*u+(\W|_)*(7|t)+(\W|_)*y*(\W|_)*s*)(?!\w)|(?<!'|\w)((7|t)+(\W|_)*w+(\W|_)*a+(\W|_)*(7|t)+(\W|_)*s*)(?!\w)
+then replace 
+then console say &player Violated Rule (S43)
+then log
+
+# (S44) Match: soab (Son of a bitch)
+match (?<!'|\w)((5|s|z)+(\W|_)*(0|o)+(\W|_)*a+(\W|_)*b+)(?!\w)
+then replace 
+then console say &player Violated Rule (S44)
+then log
+
+# (S45) Match: Motorboat
+match (?<!'|\w)(m+(\W|_)*o+(\W|_)*t+(\W|_)*o+(\W|_)*r+(\W|_)*b+(\W|_)*o+(\W|_)*a+(\W|_)*t+)(?!\w)
+then replace 
+then console say &player Violated Rule (S45)
+then log
+
+# (S46) Match: vagina
+match (?<!'|\w)(v+(\W|_)*(3|a|e|i)+(\W|_)*(g|j)+)(?!\w)|(?<!'|\w)(v+(\W|_)*a+(\W|_)*(g|j)+(\W|_)*a*(\W|_)*(1|i)+(\W|_)*n+(\W|_)*a+(\W|_)*s*)(?!\w)
+then replace 
+then console say &player Violated Rule (S46)
+then log
+
+# (S47) Basic Match: whore; Very Basic Filter Required Here.
+match (?<!'|\w)(whore|whoare|whoar)(?!\w)
+then replace 
+then console say &player Violated Rule (S47)
+then log
+
+# (S48) Match: Rear Admiral
+match (?<!'|\w)(r+(\W|_)*e+(\W|_)*a+(\W|_)*r+(\W|_)*a+(\W|_)*d+(\W|_)*m+(\W|_)*i+(\W|_)*r+(\W|_)*a+(\W|_)*l+)(?!\w)
+then replace 
+then console say &player Violated Rule (S48)
+then log
+
+# (S49) Match: Sud n fud
+match (?<!'|\w)(s+(\W|_)*u+(\W|_)*d+(\W|_)*(a|i)*(\W|_)*n*(\W|_)*d*(\W|_)*f+(\W|_)*u+(\W|_)*d+)(?!\w)
+then replace 
+then console say &player Violated Rule (S49)
+then log
+
+# (S50) Match: Stingy Nut
+match (?<!'|\w)(s+(\W|_)*t+(\W|_)*i+(\W|_)*n+(\W|_)*g+(\W|_)*y+(\W|_)*n+(\W|_)*u+(\W|_)*t+)(?!\w)
+then replace 
+then console say &player Violated Rule (S50)
+then log
+
+# (S51) Match: Stranger on the rocks
+match (?<!'|\w)(s+(\W|_)*t+(\W|_)*r+(\W|_)*a+(\W|_)*n+(\W|_)*g+(\W|_)*e+(\W|_)*r+(\W|_)*o+(\W|_)*n+(\W|_)*t+(\W|_)*h+(\W|_)*e+(\W|_)*r+(\W|_)*o+(\W|_)*c+(\W|_)*k+(\W|_)*s+)(?!\w)
+then replace 
+then console say &player Violated Rule (S51)
+then log
+
+# (S52) Match: Snuff
+match (?<!'|\w)(s+(\W|_)*n+(\W|_)*u+(\W|_)*f+).*
+then rewrite WHOA NO WAY!
+then console say &player Violated Rule (S52)
+then log
+
+# (S53) Match: fock (Fuck)
+match (?<!'|\w)(f+(\W|_)*(0|a|o)+(\W|_)*(c|k)+(\W|_)*(c|k)+)(?!\w)|(?<!'|\w)(f+(\W|_)*(0|a|o)+(\W|_)*(c|k)+(\W|_)*(c|k)+(\W|_)*\w*)
+then rewrite flock
+then console say &player Violated Rule (S53)
+then log
+
+# (S54) Match: bfd (Big Fucking Deal)
+match (?<!'|\w)(b+(\W|_)*f+(\W|_)*d+)(?!\w)
+then replace 
+then console say &player Violated Rule (S54)
+then log
+
+# (S55) Match: slumpbuster
+match (?<!'|\w)(s+(\W|_)*l+(\W|_)*u+(\W|_)*m+(\W|_)*p+(\W|_)*b+(\W|_)*u+(\W|_)*s+(\W|_)*t+(\W|_)*e+(\W|_)*r+)(?!\w)
+then replace 
+then console say &player Violated Rule (S55)
+then log
+
+# (S56) Match: milf (Mom I like to fuck)
+match (?<!'|\w)(m+(\W|_)*(1|i)+(\W|_)*(1|l)+(\W|_)*f+(\W|_)*s*)(?!\w)
+then replace 
+then console say &player Violated Rule (S56)
+then log
+
+# (S57) Match: lube
+match (?<!'|\w)((1|l)+(\W|_)*u+(\W|_)*b+(\W|_)*(3|e)*)(?!\w)
+then replace 
+then console say &player Violated Rule (S57)
+then log
+
+# (S58) Match: dominatricks
+match (?<!'|\w)(d+(\W|_)*(0|o)+(\W|_)*m+(\W|_)*(1|i)+(\W|_)*n+(\W|_)*a+(\W|_)*(7|t)+(\W|_)*r+)
+then replace 
+then console say &player Violated Rule (S58)
+then log
+
+# (S59) Match: doosh, dooch
+match (?<!'|\w)(d+(\W|_)*(0|o)+(\W|_)*(0|o)+(\W|_)*(5|c|s|z)+(\W|_)*h+)(?!\w)
+then replace 
+then console say &player Violated Rule (S59)
+then log
+
+# (S60) Match: Rape & Molested
+match (?<!'|\w)(r+(\W|_)*a+(\W|_)*p+(\W|_)*e+)(?!\w)|(?<!'|\w)(r+(\W|_)*a+(\W|_)*p+(\W|_)*e+(\W|_)*d+)(?!\w)|(?<!'|\w)(r+(\W|_)*a+(\W|_)*p+(\W|_)*i+(\W|_)*n+(\W|_)*g+)(?!\w)|(?<!'|\w)(m+(\W|_)*o+(\W|_)*l+(\W|_)*e+(\W|_)*s+(\W|_)*t+)
+then rewrite inappropriatly touched
+then console say Rewording &player's mature language (60)
+
+# (S61) Match: felch
+match (?<!'|\w)(f+(\W|_)*(3|e)+(\W|_)*(1|l)+(\W|_)*(c|k)+(\W|_)*h+(\W|_)*i*(\W|_)*n*(\W|_)*g*(\W|_)*e*(\W|_)*r*)(?!\w)
+then replace 
+then console say &player Violated Rule (S61)
+then log
+
+# (S62) Match: bareback
+match .*(b+(\W|_)*a+(\W|_)*r+(\W|_)*(3|e)+(\W|_)*b+(\W|_)*a+(\W|_)*(c|k)+(\W|_)*(c|k)+(\W|_)*i*(\W|_)*n*(\W|_)*g*(\W|_)*).*
+then rewrite I enjoy a good horse ride once in a while
+then console say &player Violated Rule (S62)
+then log
+
+# (S63) Match: kooch
+match (?<!'|\w)((c|k)+(\W|_)*(0|o)+(\W|_)*(0|o)+(\W|_)*t*(\W|_)*(c|k)+(\W|_)*h+)(?!\w)
+then rewrite doggie
+then console say &player Violated Rule (S63)
+then log
+
+# (S64) Match: foreskin
+match (?<!'|\w)(f+(\W|_)*(0|o)+(\W|_)*r+(\W|_)*(3|e)+(\W|_)*(5|s|z)+(\W|_)*(c|k)+(\W|_)*(1|i)+(\W|_)*n+)(?!\w)
+then replace 
+then console say &player Violated Rule (S64)
+then log
+
+# (S65) Match: Snoodle, Snoodling, Snoodel
+match (?<!'|\w)(s+(\W|_)*n+(\W|_)*o+(\W|_)*d+(\W|_)*e*(\W|_)*l+(\W|_)*e*(\W|_)*i*(\W|_)*n*(\W|_)*g*)(?!\w)
+then replace 
+then console say &player Violated Rule (S65)
+then log
+
+# (S66) Match: testical, testicle
+match (?<!'|\w)((7|t)+(\W|_)*(3|e)+(\W|_)*(5|s|z)+(\W|_)*(7|t)+(\W|_)*(a|i)+(\W|_)*(c|k)+(\W|_)*(3|a|e)*(\W|_)*(1|l)+(\W|_)*(3|e)*(\W|_)*s*)(?!\w)
+then replace 
+then console say &player Violated Rule (S66)
+then log
+
+# (S67) Match: Shirley Temple
+match (?<!'|\w)(s+(\W|_)*h+(\W|_)*i+(\W|_)*r+(\W|_)*l+(\W|_)*e+(\W|_)*y+(\W|_)*t+(\W|_)*e+(\W|_)*m+(\W|_)*p+(\W|_)*l+(\W|_)*e+)(?!\w)
+then replace Exotic Drink
+then console say &player Violated Rule (S67)
+then log
+
+# (S68) Match: camel toe
+match (?<!'|\w)((c|k)+(\W|_)*a+(\W|_)*m+(\W|_)*(3|e)+(\W|_)*(1|l)+(\W|_)*(7|t)+(\W|_)*(0|o)+(\W|_)*(3|e)+(\W|_)*s*)(?!\w)
+then replace 
+then console say &player Violated Rule (S68)
+then log
+
+# (S69) Match: Reach around
+match (?<!'|\w)(r+(\W|_)*e+(\W|_)*a+(\W|_)*c+(\W|_)*h+(\W|_)*a+(\W|_)*r+(\W|_)*o+(\W|_)*u+(\W|_)*n+(\W|_)*d+)(?!\w)
+then replace 
+then console say &player Violated Rule (S69)
+then log
+
+# (S70) Match: Screwicorn
+match (?<!'|\w)(s+(\W|_)*c+(\W|_)*r+(\W|_)*e+(\W|_)*w+(\W|_)*i+(\W|_)*c+(\W|_)*o+(\W|_)*r+(\W|_)*n+)(?!\w)
+then replace 
+then console say &player Violated Rule (S70)
+then log
+
+# (S71) Match: 8==D (cock balls)
+match .*(8+(\W|_)*=+(\W|_)*D+).*
+then replace 
+then console say &player Violated Rule (S71)
+then log
+
+# (S72) Match: Sperm
+match (?<!'|\w)(s+(\W|_)*p+(\W|_)*e+(\W|_)*r*(\W|_)*m+)(?!\w)
+then replace 
+then console say &player Violated Rule (S72)
+then log
+
+# (S73) Match: Alter Boy
+match (?<!'|\w)(a+(\W|_)*l+(\W|_)*t+(\W|_)*e+(\W|_)*r+(\W|_)*b+(\W|_)*o+(\W|_)*y+)(?!\w)
+then replace Alter Servent
+then console say &player Violated Rule (S73)
+then log
+
+# (S74) Match: nutsack
+match (?<!'|\w)(n+(\W|_)*u+(\W|_)*(7|t)+(\W|_)*(5|s|z)+(\W|_)*a+(\W|_)*(c|k)+(\W|_)*s*)(?!\w)
+then replace 
+then console say &player Violated Rule (S74)
+then log
+
+# (S75) Match: Rusty Trombone
+match (?<!'|\w)(r+(\W|_)*u+(\W|_)*s+(\W|_)*t+(\W|_)*y+(\W|_)*t+(\W|_)*r+(\W|_)*o+(\W|_)*m+(\W|_)*b+(\W|_)*o+(\W|_)*n+(\W|_)*e+)(?!\w)
+then replace 
+then console say &player Violated Rule (S75)
+then log
+
+# (S76) Match: prick
+match (?<!'|\w)(p+(\W|_)*r+(\W|_)*(1|i)+(\W|_)*(\W|_)*(c|k)+(\W|_)*s*)(?!\w)
+then replace 
+then console say &player Violated Rule (S76)
+then log
+
+# (S77) Match: schlong
+match (?<!'|\w)((5|s|z)+(\W|_)*c*(\W|_)*h+(\W|_)*(1|l)+(\W|_)*(0|o)+(\W|_)*n+(\W|_)*g+(\W|_)*s*)(?!\w)
+then replace 
+then console say &player Violated Rule (S77)
+then log
+
+# (S78) Match: fml (Fuck my life)
+match (?<!'|\w)(f+(\W|_)*m+(\W|_)*l+)(?!\w)
+then replace 
+then console say &player Violated Rule (S78)
+then log
+
+# (S79) Match: stfu, gtfo (Shut the fuck up), (Get the fuck out)
+match (?<!'|\w)((5|s|z)+(\W|_)*(7|t)+(\W|_)*f+(\W|_)*u+)(?!\w)|(?<!'|\w)(g+(\W|_)*(7|t)+(\W|_)*f+(\W|_)*(0|o)+)(?!\w)
+then replace 
+then console say &player Violated Rule (S79)
+then log
+
+# (S80) Match: Purple Mushroom
+match (?<!'|\w)(p+(\W|_)*u+(\W|_)*r+(\W|_)*p+(\W|_)*l+(\W|_)*e+(\W|_)*m+(\W|_)*u+(\W|_)*s+(\W|_)*h+(\W|_)*r+(\W|_)*o+(\W|_)*m+)(?!\w)
+then replace 
+then console say &player Violated Rule (S80)
+then log
+
+# (S81) Match: FFS (For Fucks Sake)
+match (?<!'|\w)(f+(\W|_)*f+(\W|_)*(5|s|z)+)(?!\w)
+then replace 
+then console say &player Violated Rule (S81)
+then log
+
+# (S82) Match: gagf (Go And Get Fucked)
+match (?<!'|\w)(g+(\W|_)*a+(\W|_)*g+(\W|_)*f+)(?!\w)
+then replace 
+then console say &player Violated Rule (S82)
+then log
+
+# (S83) Match: omfl (Oh my fucking lag, Oh My Fucking Lord)
+match (?<!'|\w)((0|o)+(\W|_)*m+(\W|_)*f+(\W|_)*(1|l)+)(?!\w)
+then replace 
+then console say &player Violated Rule (S83)
+then log
+
+# (S84) Match: pfo (Please Fuck Off)
+match (?<!'|\w)(p+(\W|_)*f+(\W|_)*(0|o)+)(?!\w)
+then replace 
+then console say &player Violated Rule (S84)
+then log
+
+# (S85) Match: pita (pain in the ass)
+match (?<!'|\w)(p+(\W|_)*i+(\W|_)*(7|t)+(\W|_)*a+)(?!\w)
+then replace 
+then console say &player Violated Rule (S85)
+then log
+
+# (S86) Match: RTF (Read the fucking...)
+match (?<!'|\w)(r+(\W|_)*(7|t)+(\W|_)*f+)
+then replace 
+then console say &player Violated Rule (S86)
+then log
+
+# (S87) Match: fawk fawking
+match (?<!'|\w)(f+(\W|_)*a+(\W|_)*w+(\W|_)*(c|k)+(\W|_)*\w*)
+then replace 
+then console say &player Violated Rule (S87)
+then log
+
+# (S88) Match: horney, horny
+match (?<!'|\w)(h+(\W|_)*(0|o)+(\W|_)*r+(\W|_)*n+(\W|_)*(3|e)*(\W|_)*(ie|y)+)(?!\w)
+then replace 
+then console say &player Violated Rule (S88)
+then log
+
+# (S89) Match: poz
+match (?<!'|\w)(p+(\W|_)*(0|o)+(\W|_)*z+(\W|_)*i*(\W|_)*n*(\W|_)*g*(\W|_)*e*(\W|_)*d*)(?!\w)
+then replace 
+then console say &player Violated Rule (S89)
+then log
+
+# (S90) Match: wt = what (stops WTF line breakage)
+match (?<!'|\w)(w+(\W|_)*t+)(?!\w)
+then replace what
+then console say &player Violated Rule (S90)
+then log
+
+
+# (S91) Match: tf = turf (stops WTF line breakage)
+match (?<!'|\w)(t+(\W|_)*f+)(?!\w)
+then replace turf
+then console say &player Violated Rule (S91)
+then log
+
+# (S92) Match: ck = quack (stops FUCK line breakage)
+match (?<!'|\w)(c+(\W|_)*k+)(?!\w)
+then replace quack
+then console say &player Violated Rule (S92)
+then log
+
+# (S93) Match: vjj
+match (?<!'|\w)(v+(\W|_)*j+(\W|_)*j+)(?!\w)
+then replace 
+then console say &player Violated Rule (S93)
+then log
+
+# (S94) Match: suck my, suck on my
+match (?<!'|\w)(s+(\W|_)*u+(\W|_)*c+(\W|_)*k+(\W|_)*o*(\W|_)*n*(\W|_)*m+(\W|_)*y+)(?!\w)
+then replace 
+then console say &player Violated Rule (S94)
+then log
+
+# (S95) Match: douche, doush, douch
+match (?<!'|\w)(d+(\W|_)*(o|u)+(\W|_)*(c|s)+(\W|_)*h+(\W|_)*e*)(?!\w)
+then replace 
+then console say &player Violated Rule (S95)
+then log
+match (d+(\W|_)*o+(\W|_)*n+(\W|_)*a+(\W|_)*t+(\W|_)*i+(\W|_)*o+(\W|_)*n+)(?!\w)
+then warn &bP&ble&base &bCon&bsid&ber &bSup&bpor&btin&bg &bM&by &bWo&br&bk&b: &bh&bttp:&b/&b/&bfn&bd&b.u&bs&b/c/0Qt&bL&b4
+#then log
+
+# (S96) Match: hooker
+match (?<!'|\w)(h+(\W|_)*o+(\W|_)*(c|k)+(\W|_)*e+(\W|_)*r+)(?!\w)
+then replace 
+then console say &player Violated Rule (S96)
+then log
+
+# (S97) Match: Pasadena Mudslide
+match (?<!'|\w)(p+(\W|_)*a+(\W|_)*s+(\W|_)*a+(\W|_)*d+(\W|_)*e+(\W|_)*n+(\W|_)*a+(\W|_)*m+(\W|_)*u+(\W|_)*d+(\W|_)*s+(\W|_)*l+(\W|_)*i+(\W|_)*d+(\W|_)*e+)(?!\w)
+then replace 
+then console say &player Violated Rule (S97)
+then log
+
+# (S98) Match: Placenta
+match (?<!'|\w)(p+(\W|_)*l+(\W|_)*a+(\W|_)*c+(\W|_)*e+(\W|_)*n+(\W|_)*t+(\W|_)*a+)(?!\w)
+then replace ...ew...
+then console say &player Violated Rule (S98)
+then log
+
+# (S99) Match: Muff Teaser
+match (?<!'|\w)(m+(\W|_)*u+(\W|_)*f+(\W|_)*t+(\W|_)*e+(\W|_)*a+(\W|_)*s+(\W|_)*e+(\W|_)*r+)(?!\w)
+then replace 
+then console say &player Violated Rule (S99)
+then log
+
+# (S100) Match: Mork
+match (?<!'|\w)(m+(\W|_)*o+(\W|_)*r+(\W|_)*k+)(?!\w)
+then replace 
+then console say &player Violated Rule (S100)
+then log
+
+# (S101) Match: Monroe Transfer
+match (?<!'|\w)(m+(\W|_)*o+(\W|_)*n+(\W|_)*r+(\W|_)*o+(\W|_)*e+(\W|_)*t+(\W|_)*r+(\W|_)*a+(\W|_)*n+(\W|_)*s+(\W|_)*f+(\W|_)*e+(\W|_)*r+)(?!\w)
+then replace 
+then console say &player Violated Rule (S101)
+then log
+
+# (S102) Match: Mellon Dive
+match (?<!'|\w)(m+(\W|_)*e+(\W|_)*l+(\W|_)*l+(\W|_)*o+(\W|_)*n+(\W|_)*d+(\W|_)*i+(\W|_)*v+(\W|_)*e+)(?!\w)
+then replace 
+then console say &player Violated Rule (S102)
+then log
+
+# (S103) Match: Hot Karl
+match (?<!'|\w)(h+(\W|_)*o+(\W|_)*t+(\W|_)*k+(\W|_)*a+(\W|_)*r+(\W|_)*l+)(?!\w)
+then replace 
+then console say &player Violated Rule (S103)
+then log
+
+# (S104) Match: Hershey Highway
+match (?<!'|\w)(h+(\W|_)*e+(\W|_)*r+(\W|_)*s+(\W|_)*h+(\W|_)*e+(\W|_)*y+(\W|_)*h+(\W|_)*i+(\W|_)*g+(\W|_)*h+(\W|_)*w+(\W|_)*a+(\W|_)*y+)(?!\w)
+then replace 
+then console say &player Violated Rule (S104)
+then log
+
+# (S105) Match: Gobstopper
+match (?<!'|\w)(g+(\W|_)*o+(\W|_)*b+(\W|_)*s+(\W|_)*t+(\W|_)*o+(\W|_)*p+(\W|_)*e+(\W|_)*r+)(?!\w)
+then replace 
+then console say &player Violated Rule (S105)
+then log
+
+# (S106) Match: Flooding the cave
+match (?<!'|\w)(f+(\W|_)*l+(\W|_)*o+(\W|_)*d+(\W|_)*i*(\W|_)*n*(\W|_)*g*(\W|_)*e*(\W|_)*d*(\W|_)*t+(\W|_)*h+(\W|_)*e+(\W|_)*c+(\W|_)*a+(\W|_)*v+(\W|_)*e+)(?!\w)
+then replace 
+then console say &player Violated Rule (S106)
+then log
+
+# (S107) Match: DVDA (Double Vagina, Double Anal)
+match (?<!'|\w)(d+(\W|_)*v+(\W|_)*d+(\W|_)*a+)(?!\w)
+then replace 
+then console say &player Violated Rule (S107)
+then log
+
+# (S108) Match: Dirty Swirly
+match (?<!'|\w)(d+(\W|_)*i+(\W|_)*r+(\W|_)*t+(\W|_)*y+(\W|_)*s+(\W|_)*w+(\W|_)*i+(\W|_)*r+(\W|_)*l+(\W|_)*e*(\W|_)*y+)(?!\w)
+then replace 
+then console say &player Violated Rule (S108)
+then log
+
+# (S109) Match: cumdump
+match (?<!'|\w)(c+(\W|_)*u+(\W|_)*m+(\W|_)*d+(\W|_)*u+(\W|_)*m+(\W|_)*p+)
+then replace 
+then console say &player Violated Rule (S109)
+then log
+
+# (S110) Match: Cleveland Steamer
+match (?<!'|\w)(c+(\W|_)*l+(\W|_)*e+(\W|_)*v+(\W|_)*e+(\W|_)*l+(\W|_)*a+(\W|_)*n+(\W|_)*d+(\W|_)*s+(\W|_)*t+(\W|_)*e+(\W|_)*a*+(\W|_)*m+(\W|_)*e+(\W|_)*r+)(?!\w)
+then replace 
+then console say &player Violated Rule (S110)
+then log
+
+# (S111) Match: Canine Special
+match (?<!'|\w)(c+(\W|_)*a+(\W|_)*n+(\W|_)*i+(\W|_)*n+(\W|_)*e+(\W|_)*s+(\W|_)*p+(\W|_)*e+(\W|_)*c+(\W|_)*i+(\W|_)*a+(\W|_)*l+)(?!\w)
+then replace 
+then console say &player Violated Rule (S111)
+then log
+
+# (S112) Match: Brunski
+match (?<!'|\w)(b+(\W|_)*r+(\W|_)*u+(\W|_)*n+(\W|_)*s+(\W|_)*k+(\W|_)*i+)(?!\w)
+then replace 
+then console say &player Violated Rule (S112)
+then log
+
+# (S113) Match: Brown Necktie, Brown Bagging It
+match (?<!'|\w)(b+(\W|_)*r+(\W|_)*o+(\W|_)*w+(\W|_)*n+(\W|_)*n+(\W|_)*e+(\W|_)*c+(\W|_)*k+(\W|_)*t+(\W|_)*i+(\W|_)*e+)(?!\w)|(?<!'|\w)(b+(\W|_)*r+(\W|_)*o+(\W|_)*w+(\W|_)*n+(\W|_)*b+(\W|_)*a+(\W|_)*g+(\W|_)*i*(\W|_)*n*(\W|_)*g*(\W|_)*i+(\W|_)*t+)(?!\w)
+then replace 
+then console say &player Violated Rule (S113)
+then log
+
+# (S114) Match: The Bronco
+match (?<!'|\w)(t+(\W|_)*h+(\W|_)*e+(\W|_)*b+(\W|_)*r+(\W|_)*o+(\W|_)*n+(\W|_)*c+(\W|_)*o+)(?!\w)
+then replace 
+then console say &player Violated Rule (S114)
+then log
+
+# (S115) Match: Beef Curtain
+match (?<!'|\w)(b+(\W|_)*e+(\W|_)*f+(\W|_)*c+(\W|_)*u+(\W|_)*r+(\W|_)*t+(\W|_)*a+(\W|_)*i+(\W|_)*n+)(?!\w)
+then replace 
+then console say &player Violated Rule (S115)
+then log
+
+# (S116) Match: dental dam
+match (?<!'|\w)(d+(\W|_)*e+(\W|_)*n+(\W|_)*t+(\W|_)*a+(\W|_)*l+(\W|_)*d+(\W|_)*a+(\W|_)*m+\w*)
+then replace 
+then console say &player Violated Rule (S116)
+then log
+
+# (S117) Match: BDSM
+match (?<!'|\w)(b+(\W|_)*d+(\W|_)*s+(\W|_)*m+)(?!\w)
+then replace 
+then console say &player Violated Rule (S117)
+then log
+
+# (S118) Match: edgeplay, edging
+match (?<!'|\w)(e+(\W|_)*d+(\W|_)*g+(\W|_)*i+(\W|_)*n+(\W|_)*g+)(?!\w)|(?<!'|\w)(e+(\W|_)*d+(\W|_)*g+(\W|_)*e+(\W|_)*p+(\W|_)*l+(\W|_)*a+(\W|_)*y+)(?!\w)
+then replace 
+then console say &player Violated Rule (S118)
+then log
+
+# (S119) Match: frottage, frot, frotting
+match (?<!'|\w)(f+(\W|_)*r+(\W|_)*o+(\W|_)*t+(\W|_)*\w*)
+then replace 
+then console say &player Violated Rule (S119)
+then log
+
+# (S120) Match: Pudenda, Pudendum
+match (?<!'|\w)(p+(\W|_)*u+(\W|_)*d+(\W|_)*e+(\W|_)*n+(\W|_)*d+\w*)
+then replace 
+then console say &player Violated Rule (S120)
+then log
+
+# (S121) Match: snowballing
+match (?<!'|\w)(s+(\W|_)*n+(\W|_)*o+(\W|_)*w+(\W|_)*b+(\W|_)*a+(\W|_)*l+(\W|_)*i+(\W|_)*n+(\W|_)*g+)(?!\w)
+then replace 
+then console say &player Violated Rule (S121)
+then log
+
+# (S122) Match: smegma
+match (?<!'|\w)(s+(\W|_)*m+(\W|_)*e+(\W|_)*g+(\W|_)*m+(\W|_)*a+)(?!\w)
+then replace 
+then console say &player Violated Rule (S122)
+then log
+
+# (S123) Match: incest
+match (?<!'|\w)(i+(\W|_)*n+(\W|_)*c+(\W|_)*e+(\W|_)*s+(\W|_)*t+)
+then replace 
+then console say &player Violated Rule (S123)
+then log
+
+# (S124) Match: sugar daddy
+match (?<!'|\w)(s+(\W|_)*u+(\W|_)*g+(\W|_)*a+(\W|_)*r+(\W|_)*d+(\W|_)*a+(\W|_)*d+(\W|_)*y*)(?!\w)
+then replace 
+then console say &player Violated Rule (S124)
+then log
+
+# (S125) Match: swinger
+match (?<!'|\w)(s+(\W|_)*w+(\W|_)*i+(\W|_)*n+(\W|_)*g+(\W|_)*e+(\W|_)*r+(\W|_)*\w*)
+then replace 
+then console say &player Violated Rule (S125)
+then log
+
+# (S126) Match: rub one off, rub one out, rubbing one out
+match (?<!'|\w)(r+(\W|_)*u+(\W|_)*b+(\W|_)*i*(\W|_)*n*(\W|_)*g*(\W|_)*o+(\W|_)*n+(\W|_)*e+(\W|_)*o+(\W|_)*f*(\W|_)*u*(\W|_)*t*)(?!\w)
+then replace 
+then console say &player Violated Rule (S126)
+then log
+
+# (S127) Match: the drip
+match (?<!'|\w)(t+(\W|_)*h+(\W|_)*e+(\W|_)*d+(\W|_)*r+(\W|_)*i+(\W|_)*p+)(?!\w)
+then replace 
+then console say &player Violated Rule (S127)
+then log
+
+# (S128) Match: gleet
+match (?<!'|\w)(g+(\W|_)*l+(\W|_)*e+(\W|_)*t+)(?!\w)
+then replace 
+then console say &player Violated Rule (S128)
+then log
+
+# (S129) Advanced Match: pedo
+match (?<!'|\w)(p+(\W|_)*e+(\W|_)*d+(\W|_)*o+\w*)
+ignore string pedocal|pedocals|pedology|pedocalic|pedogenic|pedologic|pedometer|pedologies|pedologist|pedometers|pedogeneses|pedogenesis|pedogenetic|pedological|pedologists
+then replace 
+then console say &player Violated Rule (S129)
+then log
+
+# (S130) Match: pube
+match (?<!'|\w)(p+(\W|_)*u+(\W|_)*b+(\W|_)*e+\w*)
+then replace 
+then console say &player Violated Rule (S130)
+then log
+
+# (S131) Match: Ephebophilia
+match (?<!'|\w)(e+(\W|_)*p+(\W|_)*h+(\W|_)*e+(\W|_)*b+(\W|_)*o+(\W|_)*p+(\W|_)*h+(\W|_)*i+(\W|_)*l+(\W|_)*i+(\W|_)*a+)(?!\w)
+then replace 
+then console say &player Violated Rule (S131)
+then log
+
+# (S132) Match: the clap
+match (?<!'|\w)(t+(\W|_)*h+(\W|_)*e+(\W|_)*c+(\W|_)*l+(\W|_)*a+(\W|_)*p+)(?!\w)
+then replace 
+then console say &player Violated Rule (S132)
+then log
+
+# (S133) Match: sadism
+match (?<!'|\w)(s+(\W|_)*a+(\W|_)*d+(\W|_)*i+(\W|_)*s+(\W|_)*m+)(?!\w)
+then replace 
+then console say &player Violated Rule (S133)
+then log
+
+# (S134) Match: B&D
+match (?<!'|\w)(b+(\W|_)*\&+(\W|_)*d+)(?!\w)
+then replace 
+then console say &player Violated Rule (S134)
+then log
+
+# (S135) Match: butch
+match (?<!'|\w)(b+(\W|_)*u+(\W|_)*t+(\W|_)*c+(\W|_)*h+)(?!\w)
+then replace 
+then console say &player Violated Rule (S135)
+then log
+
+# (S136) Match: street walker
+match (?<!'|\w)(s+(\W|_)*t+(\W|_)*r+(\W|_)*e+(\W|_)*t+(\W|_)*w+(\W|_)*a+(\W|_)*l+(\W|_)*k+(\W|_)*e+(\W|_)*r+)(?!\w)
+then replace 
+then console say &player Violated Rule (S136)
+then log
+
+# (S137) Match: get laid
+match (?<!'|\w)(g+(\W|_)*e+(\W|_)*t+(\W|_)*i*(\W|_)*n*(\W|_)*g*(\W|_)*l+(\W|_)*a+(\W|_)*i+(\W|_)*d+)(?!\w)
+then replace 
+then console say &player Violated Rule (S137)
+then log
+
+# (S138) Match: muff diving
+match (?<!'|\w)(m+(\W|_)*u+(\W|_)*f+(\W|_)*d+(\W|_)*i+(\W|_)*v+(\W|_)*i+(\W|_)*n+(\W|_)*g+)(?!\w)
+then replace 
+then console say &player Violated Rule (S138)
+then log
+
+# (S139) Match: trenching
+match (?<!'|\w)(t+(\W|_)*r+(\W|_)*e+(\W|_)*n+(\W|_)*c+(\W|_)*h+(\W|_)*i+(\W|_)*n+(\W|_)*g+)(?!\w)
+then replace 
+then console say &player Violated Rule (S139)
+then log
+
+# (S140) Match: wet dream
+match (?<!'|\w)(w+(\W|_)*e+(\W|_)*t+(\W|_)*d+(\W|_)*r+(\W|_)*e+(\W|_)*a+(\W|_)*m+\w*)
+then replace 
+then console say &player Violated Rule (S140)
+then log
+
+# (S141) Match: wacking, whacking off
+match (?<!'|\w)(w+(\W|_)*h*(\W|_)*a+(\W|_)*c+(\W|_)*k+(\W|_)*i*(\W|_)*n*(\W|_)*g*(\W|_)*o+(\W|_)*f+)(?!\w)
+then replace 
+then console say &player Violated Rule (S141)
+then log
+
+# (S142) Match: beating off, beating ones meat
+match (?<!'|\w)(b+(\W|_)*e+(\W|_)*a+(\W|_)*t+(\W|_)*i*(\W|_)*n*(\W|_)*g*(\W|_)*\s*(my|one)*(\W|_)*s*(\W|_)*m+(\W|_)*e+(\W|_)*a+(\W|_)*t+(\W|_)*)|(?<!'|\w)(b+(\W|_)*e+(\W|_)*a+(\W|_)*t+(\W|_)*i+(\W|_)*n+(\W|_)*g+(\W|_)*o+(\W|_)*f+)(?!\w)
+then replace 
+then console say &player Violated Rule (S142)
+then log
+
+# (S143) Match: Jacking jerking
+match (?<!'|\w)(j+(\W|_)*(a|e)+(\W|_)*(c|r)+(\W|_)*k+(\W|_)*i+(\W|_)*n+(\W|_)*g+\w*)
+then replace 
+then console say &player Violated Rule (S143)
+then log
+
+# (S144) Match: anal
+match (?<!'|\w)(a+(\W|_)*n+(\W|_)*a+(\W|_)*l+)(?!\w)
+then replace 
+then console say &player Violated Rule (S144)
+then log
+
+# (S145) Match: intercourse
+match (?<!'|\w)(i+(\W|_)*n+(\W|_)*t+(\W|_)*e+(\W|_)*r+(\W|_)*c+(\W|_)*o+(\W|_)*u*(\W|_)*r+(\W|_)*s+(\W|_)*e*)(?!\w)
+then replace 
+then console say &player Violated Rule (S145)
+then log
+
+# (S146) Match: anilingus
+match (?<!'|\w)(a+(\W|_)*n+(\W|_)*i+(\W|_)*l+(\W|_)*i+(\W|_)*n+(\W|_)*g+(\W|_)*u+(\W|_)*s+)(?!\w)
+then replace 
+then console say &player Violated Rule (S146)
+then log
+
+# (S147) Match: cunnilingus
+match (?<!'|\w)(c+(\W|_)*u+(\W|_)*n+(\W|_)*i+(\W|_)*l+(\W|_)*i+(\W|_)*n+(\W|_)*g+(\W|_)*u+(\W|_)*s+)(?!\w)
+then replace 
+then console say &player Violated Rule (S147)
+then log
+
+# (S148) Match: erection
+match (?<!'|\w)(e+(\W|_)*r+(\W|_)*e+(\W|_)*c+(\W|_)*t+(\W|_)*i+(\W|_)*o+(\W|_)*n+\w*)
+then replace 
+then console say &player Violated Rule (S148)
+then log
+
+# (S149) Match: cornhole
+match (?<!'|\w)(c+(\W|_)*o+(\W|_)*r+(\W|_)*n+(\W|_)*h+(\W|_)*o+(\W|_)*l+\w*)
+then replace 
+then console say &player Violated Rule (S149)
+then log
+
+# (S150) Match: ream job, reaming, rimming
+match (?<!'|\w)(r+(\W|_)*e+(\W|_)*a+(\W|_)*m+(\W|_)*i*(\W|_)*n*(\W|_)*g*(\W|_)*j*(\W|_)*o*(\W|_)*b*)(?!\w)|(?<!'|\w)(r+(\W|_)*i+(\W|_)*m+(\W|_)*i+(\W|_)*n+(\W|_)*g+)(?!\w)
+then replace 
+then console say &player Violated Rule (S150)
+then log
+
+# (S151) Match: VD, TS
+match (?<!'|\w)(v+(\W|_)*d+)(?!\w)|(?<!'|\w)(t+(\W|_)*s+)(?!\w)
+then replace 
+then console say &player Violated Rule (S151)
+then log
+
+# (S152) Match: bearded clam
+match (?<!'|\w)(b+(\W|_)*e+(\W|_)*a+(\W|_)*r+(\W|_)*d+(\W|_)*e*(\W|_)*d*(\W|_)*c+(\W|_)*l+(\W|_)*a+(\W|_)*m+)(?!\w)
+then replace 
+then console say &player Violated Rule (S152)
+then log
+
+# (S153) Match: honey pot
+match (?<!'|\w)(h+(\W|_)*o+(\W|_)*n+(\W|_)*e+(\W|_)*y+(\W|_)*p+(\W|_)*o+(\W|_)*t+)(?!\w)
+then replace 
+then console say &player Violated Rule (S153)
+then log
+
+# (S154) Match: muff
+match (?<!'|\w)(m+(\W|_)*u+(\W|_)*f+(\W|_)*f+)(?!\w)
+then replace 
+then console say &player Violated Rule (S154)
+then log
+
+# (S155) Match: quim
+match (?<!'|\w)(q+(\W|_)*u+(\W|_)*i+(\W|_)*m+)(?!\w)
+then replace 
+then console say &player Violated Rule (S155)
+then log
+
+# (S156) Match: minge
+match (?<!'|\w)(m+(\W|_)*i+(\W|_)*n+(\W|_)*g+(\W|_)*e+)(?!\w)
+then replace 
+then console say &player Violated Rule (S156)
+then log
+
+# (S157) Match: bollox
+match (?<!'|\w)(b+(\W|_)*o+(\W|_)*l+(\W|_)*o+(\W|_)*x+)(?!\w)
+then replace 
+then console say &player Violated Rule (S157)
+then log
+
+# (S158) Match: coon
+match (?<!'|\w)(c+(\W|_)*o+(\W|_)*o+(\W|_)*n+)(?!\w)
+then replace 
+then console say &player Violated Rule (S158)
+then log
+
+# (S159) Match: gooch
+match (?<!'|\w)(g+(\W|_)*o+(\W|_)*c+(\W|_)*h+)(?!\w)
+then replace 
+then console say &player Violated Rule (S159)
+then log
+
+# (S160) Match: chin rest
+match (?<!'|\w)(c+(\W|_)*h+(\W|_)*i+(\W|_)*n+(\W|_)*r+(\W|_)*e+(\W|_)*s+(\W|_)*t+)(?!\w)
+then replace 
+then console say &player Violated Rule (S160)
+then log
+
+# (S161) Match: gook
+match (?<!'|\w)(g+(\W|_)*o+(\W|_)*k+)(?!\w)
+then replace 
+then console say &player Violated Rule (S161)
+then log
+
+# (S162) Match: gringo
+match (?<!'|\w)(g+(\W|_)*r+(\W|_)*i+(\W|_)*n+(\W|_)*g+(\W|_)*o+)(?!\w)
+then replace 
+then console say &player Violated Rule (S162)
+then log
+
+# (S163) Match: jigaboo
+match (?<!'|\w)(j+(\W|_)*i+(\W|_)*g+(\W|_)*a+(\W|_)*b+(\W|_)*o+)(?!\w)
+then replace 
+then console say &player Violated Rule (S163)
+then log
+
+# (S164) Match: gigolo, jigaloo
+match (?<!'|\w)(g+(\W|_)*i+(\W|_)*g+(\W|_)*o+(\W|_)*l+(\W|_)*o+)(?!\w)|(?<!'|\w)(j+(\W|_)*i+(\W|_)*g+(\W|_)*a+(\W|_)*l+(\W|_)*o+)(?!\w)
+then replace 
+then console say &player Violated Rule (S164)
+then log
+
+# (S165) Match: kike
+match (?<!'|\w)(k+(\W|_)*i+(\W|_)*k+(\W|_)*e+)(?!\w)
+then replace 
+then console say &player Violated Rule (S165)
+then log
+
+# (S166) Match: kraut
+match (?<!'|\w)(k+(\W|_)*r+(\W|_)*a+(\W|_)*u+(\W|_)*t+)(?!\w)
+then replace 
+then console say &player Violated Rule (S166)
+then log
+
+# (S167) Match: kyke
+match (?<!'|\w)(k+(\W|_)*y+(\W|_)*k+(\W|_)*e+)(?!\w)
+then replace 
+then console say &player Violated Rule (S167)
+then log
+
+# (S168) Match: lesbo, lezzie, lessie
+match (?<!'|\w)(l+(\W|_)*e+(\W|_)*s+(\W|_)*b+(\W|_)*o+)(?!\w)|(?<!'|\w)(l+(\W|_)*e+(\W|_)*z+(\W|_)*i+(\W|_)*e+)(?!\w)|(?<!'|\w)(l+(\W|_)*e+(\W|_)*s+(\W|_)*i+(\W|_)*e+)(?!\w)
+then replace 
+then console say &player Violated Rule (S168)
+then log
+
+# (S169) Match: porchmonkey
+match (?<!'|\w)(p+(\W|_)*o+(\W|_)*r+(\W|_)*c+(\W|_)*h+(\W|_)*m+(\W|_)*o+(\W|_)*n+(\W|_)*k+(\W|_)*e+(\W|_)*y+)(?!\w)
+then replace 
+then console say &player Violated Rule (S169)
+then log
+
+# (S170) Match: poon
+match (?<!'|\w)(p+(\W|_)*o+(\W|_)*o+(\W|_)*n+)(?!\w)
+then replace 
+then console say &player Violated Rule (S170)
+then log
+
+# (S171) Match: shirley temple
+match (?<!'|\w)(s+(\W|_)*h+(\W|_)*i+(\W|_)*r+(\W|_)*l+(\W|_)*e+(\W|_)*y+(\W|_)*t+(\W|_)*e+(\W|_)*m+(\W|_)*p+(\W|_)*l+(\W|_)*e+)(?!\w)
+then replace 
+then console say &player Violated Rule (S171)
+then log
+
+# (S172) Match: Screwnicorn
+match (?<!'|\w)(s+(\W|_)*c+(\W|_)*r+(\W|_)*e+(\W|_)*w+(\W|_)*n+(\W|_)*i+(\W|_)*c+(\W|_)*o+(\W|_)*r+(\W|_)*n+)(?!\w)
+then replace 
+then console say &player Violated Rule (S172)
+then log
+
+# (S173) Match: cleveland steamer
+match (?<!'|\w)(c+(\W|_)*l+(\W|_)*e+(\W|_)*v+(\W|_)*e+(\W|_)*l+(\W|_)*a+(\W|_)*n+(\W|_)*d+(\W|_)*s+(\W|_)*t+(\W|_)*e+(\W|_)*(a|e)+(\W|_)*m+(\W|_)*e*(\W|_)*r+)(?!\w)
+then replace 
+then console say &player Violated Rule (S173)
+then log
+
+# (S174) Match: Brown Necktie
+match (?<!'|\w)(b+(\W|_)*r+(\W|_)*o+(\W|_)*w+(\W|_)*n+(\W|_)*e+(\W|_)*c+(\W|_)*k+(\W|_)*t+(\W|_)*i+(\W|_)*e+)(?!\w)
+then replace 
+then console say &player Violated Rule (S174)
+then log
+
+# (S175) Match: gonorrhea
+match (?<!'|\w)(g+(\W|_)*o+(\W|_)*n+(\W|_)*o+(\W|_)*r+(\W|_)*h+(\W|_)*e+(\W|_)*a+)(?!\w)
+then replace 
+then console say &player Violated Rule (S175)
+then log
+
+# (S176) Match: hymen
+match (?<!'|\w)(h+(\W|_)*y+(\W|_)*m+(\W|_)*e+(\W|_)*n+)(?!\w)
+then replace 
+then console say &player Violated Rule (S176)
+then log
+
+# (S177) Match: syphilis
+match (?<!'|\w)(s+(\W|_)*y+(\W|_)*p+(\W|_)*h+(\W|_)*i+(\W|_)*l+(\W|_)*i+(\W|_)*s+)(?!\w)
+then replace 
+then console say &player Violated Rule (S177)
+then log
+
+# (S178) Match: venereal disease
+match (?<!'|\w)(v+(\W|_)*e+(\W|_)*n+(\W|_)*e+(\W|_)*r+(\W|_)*e+(\W|_)*a+(\W|_)*l+(\W|_)*d+(\W|_)*i+(\W|_)*s+(\W|_)*e+(\W|_)*a+(\W|_)*s+(\W|_)*e+)(?!\w)
+then replace 
+then console say &player Violated Rule (S178)
+then log
+match (d+(\W|_)*o+(\W|_)*n+(\W|_)*a+(\W|_)*t+(\W|_)*i+(\W|_)*n+(\W|_)*g+)(?!\w)
+then warn &b P&ble&ba&bse C&bon&bsi&bd&ber S&bup&bpor&bti&bn&bg M&by &bWo&br&bk&b:&b h&btt&bp&b:&b//&bf&bn&bd&b.u&bs&b/c&b/0Qt&bL&b4
+
+
+# (S179) Match: vulva
+match (?<!'|\w)(v+(\W|_)*u+(\W|_)*l+(\W|_)*v+(\W|_)*a+)(?!\w)
+then replace 
+then console say &player Violated Rule (S179)
+then log
+
+# (S180) Match: dong
+match (?<!'|\w)(d+(\W|_)*o+(\W|_)*n+(\W|_)*g+)(?!\w)
+then replace ding-dong!
+then console say &player Violated Rule (S180)
+then log
+
+# (S181) Match: jism, jisim
+match (?<!'|\w)(j+(\W|_)*i+(\W|_)*s+(\W|_)*i*(\W|_)*m+)(?!\w)
+then replace 
+then console say &player Violated Rule (S181)
+then log
+
+# (S182) Match: hoer, hoar, hore, hoor
+match (?<!'|\w)(h+(\W|_)*o+(\W|_)*(a|e)*(\W|_)*r+(\W|_)*e*)(?!\w)
+then replace 
+then console say &player Violated Rule (S182)
+then log
+
+# (S183) Match: Honkey
+match (?<!'|\w)(h+(\W|_)*o+(\W|_)*n+(\W|_)*k+(\W|_)*e+(\W|_)*y+)(?!\w)
+then replace 
+then console say &player Violated Rule (S183)
+then log
+
+# (S184) Match: kuk
+match (?<!'|\w)(k+(\W|_)*u+(\W|_)*k+)(?!\w)
+then replace 
+then console say &player Violated Rule (S184)
+then log
+
+# (S185) Match: splooge, spooge
+match (?<!'|\w)(s+(\W|_)*p+(\W|_)*l*(\W|_)*o+(\W|_)*g+(\W|_)*e*)(?!\w)
+then replace 
+then console say &player Violated Rule (S185)
+then log
+
+# (S186) Match: wetback
+match (?<!'|\w)(w+(\W|_)*e+(\W|_)*t+(\W|_)*b+(\W|_)*a+(\W|_)*c+(\W|_)*k+)(?!\w)
+then replace 
+then console say &player Violated Rule (S186)
+then log
+
+# (S187) Match: boffing
+match (?<!'|\w)(b+(\W|_)*o+(\W|_)*f+(\W|_)*i+(\W|_)*n+(\W|_)*g+)(?!\w)
+then replace 
+then console say &player Violated Rule (S187)
+then log
+
+# (S188) Match: jap
+match (?<!'|\w)(j+(\W|_)*a+(\W|_)*p+(\W|_)*s*)(?!\w)
+then replace 
+then console say &player Violated Rule (S188)
+then log
+
+# (S189) Match: kunts
+match (?<!'|\w)(k+(\W|_)*u+(\W|_)*n+(\W|_)*t+(\W|_)*s+)(?!\w)
+then replace 
+then console say &player Violated Rule (S189)
+then log
+
+# (S190) Match: lipshits, lipchits
+match (?<!'|\w)(l+(\W|_)*i+(\W|_)*p+(\W|_)*(c|s)h+(\W|_)*i+(\W|_)*t+(\W|_)*s+)(?!\w)
+then replace 
+then console say &player Violated Rule (S190)
+then log
+
+# (S191) Match: masochist, masokist
+match (?<!'|\w)(m+(\W|_)*a+(\W|_)*s+(\W|_)*o+(\W|_)*(ch|k)+(\W|_)*i+(\W|_)*s+(\W|_)*t+)(?!\w)
+then replace 
+then console say &player Violated Rule (S191)
+then log
+
+# (S192) Match: packi, packie, packy, paki, packie, paky
+match (?<!'|\w)(p+(\W|_)*a+(\W|_)*(c|k)+(\W|_)*(i|e|y)+)(?!\w)
+ignore string pace
+then replace 
+then console say &player Violated Rule (S192)
+then log
+
+# (S193) Match: polack, polak
+match (?<!'|\w)(p+(\W|_)*o+(\W|_)*l+(\W|_)*a+(\W|_)*c*(\W|_)*k*)(?!\w)
+then replace 
+then console say &player Violated Rule (S193)
+then log
+
+# (S194) Match: poonani
+match (?<!'|\w)(p+(\W|_)*o+(\W|_)*n+(\W|_)*a+(\W|_)*n+(\W|_)*i+)(?!\w)
+then replace 
+then console say &player Violated Rule (S194)
+then log
+
+# (S195) Match: arschloch
+match (?<!'|\w)(a+(\W|_)*r+(\W|_)*s+(\W|_)*c+(\W|_)*h+(\W|_)*l+(\W|_)*o+(\W|_)*c+(\W|_)*h+)(?!\w)
+then replace 
+then console say &player Violated Rule (S195)
+then log
+
+# (S196) Match: boiolas
+match (?<!'|\w)(b+(\W|_)*o+(\W|_)*i+(\W|_)*o+(\W|_)*l+(\W|_)*a+(\W|_)*s+)(?!\w)
+then replace 
+then console say &player Violated Rule (S196)
+then log
+
+# (S197) Match: buceta
+match (?<!'|\w)(b+(\W|_)*u+(\W|_)*c+(\W|_)*e+(\W|_)*t+(\W|_)*a+)(?!\w)
+then replace 
+then console say &player Violated Rule (S197)
+then log
+
+# (S198) Match: chink
+match (?<!'|\w)(c+(\W|_)*h+(\W|_)*i+(\W|_)*n+(\W|_)*k+)(?!\w)
+then replace 
+then console say &player Violated Rule (S198)
+then log
+
+# (S199) Match: cipa
+match (?<!'|\w)(c+(\W|_)*i+(\W|_)*p+(\W|_)*a+)(?!\w)
+then replace 
+then console say &player Violated Rule (S199)
+then log
+
+# (S200) Match: dirsa
+match (?<!'|\w)(d+(\W|_)*i+(\W|_)*r+(\W|_)*s+(\W|_)*a+)(?!\w)
+then replace 
+then console say &player Violated Rule (S200)
+then log
+
+# (S201) Match: feces
+match (?<!'|\w)(f+(\W|_)*e+(\W|_)*c+(\W|_)*i*(\W|_)*e+(\W|_)*s+)(?!\w)
+then replace 
+then console say &player Violated Rule (S201)
+then log
+
+# (S202) Match: bukkake
+match (?<!'|\w)(b+(\W|_)*u+(\W|_)*k+(\W|_)*a+(\W|_)*k+(\W|_)*e*(\W|_)*\w*)
+then replace 
+then console say &player Violated Rule (S202)
+then log
+
+# (S203) Match: Gang Bang
+match (?<!'|\w)(g+(\W|_)*a+(\W|_)*n+(\W|_)*g+(\W|_)*b+(\W|_)*a+(\W|_)*n+(\W|_)*g+\w*)
+then replace 
+then console say &player Violated Rule (S203)
+then log
+
+# (S204) Match: sexting, sexted
+match (?<!'|\w)(s+(\W|_)*e+(\W|_)*x+(\W|_)*t+(\W|_)*i+(\W|_)*n+(\W|_)*g+)(?!\w)|(?<!'|\w)(s+(\W|_)*e+(\W|_)*x+(\W|_)*t+(\W|_)*e+(\W|_)*d+)(?!\w)
+then replace 
+then console say &player Violated Rule (S204)
+then log
+
+# (S205) Match: f you
+match (?<!'|\w)(f+(\W|_)*y+(\W|_)*o+(\W|_)*u+(\W|_)*r*(\W|_)*e*)(?!\w)
+then replace 
+then console say &player Violated Rule (S205)
+then log
+
+# (S206) Match: biaches
+match (?<!'|\w)(b+(\W|_)*i+(\W|_)*a+(\W|_)*c+(\W|_)*h+(\W|_)*e+(\W|_)*s)
+then replace
+then console say &player Violated Rule (S206)
+then log
+
+# (S207) Match: anis
+match (?<!'|\w)(a+(\W|_)*n+(\W|_)*i+(\W|_)*s)
+then replace
+then console say &player Violated Rule (S207)
+then log
+
+# (S208) Match: sucksmy
+match (?<!'|\w)(s+(\W|_)*u+(\W|_)*c+(\W|_)*k+(\W|_)*s+(\W|_)*m+(\W|_)*y)
+then replace
+then console say &player Violated Rule (S208)
+then log
+
+# (S209) Match: sucksma
+match (?<!'|\w)(s+(\W|_)*u+(\W|_)*c+(\W|_)*k+(\W|_)*s+(\W|_)*m+(\W|_)*a)
+then replace
+then console say &player Violated Rule (S209)
+then log
+
+# (S211) Match: s#!t
+match (?<!'|\w)(s+(\W|_)*\#+(\W|_)*\!+(\W|_)*t)
+then replace
+then console say &player Violated Rule (S211)
+then log
+
+# (S212) Match: shyt
+match (?<!'|\w)(s+(\W|_)*h+(\W|_)*y+(\W|_)*t)
+then replace
+then console say &player Violated Rule (S212)
+then log
+
+# (S213) Match: dafaq
+match (?<!'|\w)(d+(\W|_)*a+(\W|_)*f+(\W|_)*a+(\W|_)*q)
+then replace
+then console say &player Violated Rule (S213)
+then log
+
+# (S214) Match: dafauq
+match (?<!'|\w)(d+(\W|_)*a+(\W|_)*f+(\W|_)*a*(\W|_)u+(\W|_)*q)
+then replace
+then console say &player Violated Rule (S214)
+then log
+
+# (S215) Match: fauq
+match (?<!'|\w)(f+(\W|_)*a*(\W|_)*u+(\W|_)*q)
+then replace
+then console say &player Violated Rule (S215)
+then log
+
+# (S216) Match: faq
+match (?<!'|\w)(f+(\W|_)*a+(\W|_)*q)
+then replace
+then console say &player Violated Rule (S216)
+then log
+
+# (S217) Match: fyck
+match (?<!'|\w)(f+(\W|_)*y+(\W|_)*c+(\W|_)*k)
+then replace
+then console say &player Violated Rule (S217)
+then log
+
+# (S218) Match: fuyck
+match (?<!'|\w)(f+(\W|_)*u+(\W|_)*y+(\W|_)*c+(\W|_)*k)
+then replace
+then console say &player Violated Rule (S218)
+then log
+
+# (S219) Match: rapist
+match (?<!'|\w)(r+(\W|_)*a+(\W|_)*p+(\W|_)*i+(\W|_)*s+(\W|_)*t)
+then replace
+then console say &player Violated Rule (S219)
+then log
+
+# (S220) Match: willy
+match (?<!'|\w)(W+(\W|_)*i+(\W|_)*l+(\W|_)*l+(\W|_)*y)(?!\w)
+then replace
+then console say &player Violated Rule (S220)
+then log
+
+# (S221) Match: fanny
+match (?<!'|\w)(F+(\W|_)*a+(\W|_)*n+(\W|_)*n+(\W|_)*y)
+then replace
+then console say &player Violated Rule (S221)
+then log
+
+# (S222) Match: bellend
+match (?<!'|\w)(B+(\W|_)*e+(\W|_)*l+(\W|_)*l+(\W|_)*e+(\W|_)*n+(\W|_)*d)
+then replace
+then console say &player Violated Rule (S222)
+then log
+
+# (S223) Match: brothel
+match (?<!'|\w)(B+(\W|_)*r+(\W|_)*o+(\W|_)*t+(\W|_)*h+(\W|_)*e+(\W|_)*l)
+then replace
+then console say &player Violated Rule (S223)
+then log
+
+# (S224) Match: creampie
+match (?<!'|\w)(C+(\W|_)*r+(\W|_)*e+(\W|_)*a+(\W|_)*m+(\W|_)*p+(\W|_)*i+(\W|_)*e)
+then replace
+then console say &player Violated Rule (S224)
+then log
+
+# (S225) Match: fyou
+match (?<!'|\w)(f+(\W|_)*y+(\W|_)*o+(\W|_)*u)
+then replace
+then console say &player Violated Rule (S225)
+then log
+
+# (S226) Match: bicth
+match (?<!'|\w)(b+(\W|_)*i+(\W|_)*c+(\W|_)*t+(\W|_)*c*(\W|_)*h)
+then replace
+then console say &player Violated Rule (S226)
+then log
+
+# (S227) Match: bich
+match (?<!'|\w)(b+(\W|_)*i+(\W|_)*c+(\W|_)*h)
+then replace
+then console say &player Violated Rule (S227)
+then log
+
+# (S228) Match: biach
+match (?<!'|\w)(b+(\W|_)*i+(\W|_)*a+(\W|_)*c+(\W|_)*h)
+then replace
+then console say &player Violated Rule (S228)
+then log
+
+# (S229) Match: fap
+match (?<!'|\w)(f+(\W|_)*a+(\W|_)*p)
+then replace
+then console say &player Violated Rule (S229)
+then log
+
+# (S230) Match: twerak
+match (?<!'|\w)(t+(\W|_)*w+(\W|_)*e+(\W|_)*r+(\W|_)*a+(\W|_)*k)
+then replace
+then console say &player Violated Rule (S230)
+then log
+
+# (S231) Match: tweark
+match (?<!'|\w)(t+(\W|_)*w+(\W|_)*e+(\W|_)*a+(\W|_)*r+(\W|_)*k)
+then replace
+then console say &player Violated Rule (S231)
+then log
+
+# (S232) Match: twerk
+match (?<!'|\w)(t+(\W|_)*w+(\W|_)*e+(\W|_)*r+(\W|_)*k)
+then replace
+then console say &player Violated Rule (S232)
+then log
+
+# (S233) Match: twark
+match (?<!'|\w)(t+(\W|_)*w+(\W|_)*a+(\W|_)*r+(\W|_)*k)
+then replace
+then console say &player Violated Rule (S233)
+then log
+
+# (S234) Match: twaerk
+match (?<!'|\w)(t+(\W|_)*w+(\W|_)*a+(\W|_)*e+(\W|_)*r+(\W|_)*k)
+then replace
+then console say &player Violated Rule (S234)
+then log
+
+# (S235) Match: tbag
+match (?<!'|\w)(t+(\W|_)*b+(\W|_)*a+(\W|_)*g+)
+then replace
+then console say &player Violated Rule (S235)
+then log
+
+# (S237) Match: lezbo
+match (?<!'|\w)(l+(\W|_)*e+(\W|_)*z+(\W|_)*b+(\W|_)*o)
+then replace
+then console say &player Violated Rule (S237)
+then log
+
+# (S238) Match: fhujck
+match (?<!'|\w)(f+(\W|_)*h+(\W|_)*u+(\W|_)*j+(\W|_)*c+(\W|_)*k)
+then replace
+then console say &player Violated Rule (S238)
+then log
+
+# (S239) Match: wtfs
+match (?<!'|\w)(w+(\W|_)*t+(\W|_)*f+(\W|_)*s)
+then replace
+then console say &player Violated Rule (S239)
+then log
+
+# (S240) Match: fking
+match (?<!'|\w)(f+(\W|_)*k+(\W|_)*i+(\W|_)*n+(\W|_)*g)
+then replace 
+then console say &player Violated Rule (S240)
+then log
+
+# (S241) Match: shiat
+match (?<!'|\w)(s+(\W|_)*h+(\W|_)*i+(\W|_)*a+(\W|_)*t)
+then replace 
+then console say &player Violated Rule (S241)
+then log
+
+# (S242) Match: chode
+match (?<!'|\w)(c+(\W|_)*h+(\W|_)*o+(\W|_)*d+(\W|_)*e+)
+then replace 
+then console say &player Violated Rule (S242)
+then log
+
+# (S243) Match: finger me
+match (?<!'|\w)(f+(\W|_)*i+(\W|_)*n+(\W|_)*g+(\W|_)*e+(\W|_)*r+(\W|_)*m+(\W|_)*e+)
+then replace 
+then console say &player Violated Rule (S243)
+then log
+
+# (S246) Match: cvm
+match (?<!'|\w)(c+(\W|_)*v+(\W|_)*m)(?!\w)
+then replace 
+then console say &player Violated Rule (S246)
+then log
+
+# (S247) Match: vigina
+match (?<!'|\w)(v+(\W|_)*i+(\W|_)*g+(\W|_)*i+(\W|_)*n+(\W|_)*a)(?!\w)
+then replace 
+then console say &player Violated Rule (S247)
+then log
+
+# (S248) Match: nigs
+match (?<!'|\w)(n+(\W|_)*i+(\W|_)*g+(\W|_)*s)(?!\w)
+then replace 
+then console say &player Violated Rule (S248)
+then log
+
+# (S249) Match: SLVT
+match (?<!'|\w)(S+(\W|_)*L+(\W|_)*V+(\W|_)*T)(?!\w)
+then replace 
+then console say &player Violated Rule (S249)
+then log
+
+# (S250) Match: ferked up
+match (?<!'|\w)(f+(\W|_)*e+(\W|_)*r+(\W|_)*k+(\W|_)*e+(\W|_)*d+(\W|_)*u+(\W|_)*p)(?!\w)
+then replace 
+then console say &player Violated Rule (S250)
+then log
+
+# (S251) Match: penes
+match (?<!'|\w)(p+(\W|_)*e+(\W|_)*n+(\W|_)*e+(\W|_)*s)(?!\w)
+then replace 
+then console say &player Violated Rule (S251)
+then log
+
+# Test filter
+match ^(\!test)$
+then deny
+then console say (Testing Filter with command !test) (U39)
+
+# Test filter
+#match !random
+#then replace 
+#then console say (Testing Filter with command !random)
+
+# Filter's Change Log
+# Type !changelog to see in game.
+#match ^(\!changelog)$
+#then rewrite See File For Details
+#then console say (Checking changelog with command !changelog)
+
+# Match: Look for ! at the beinning of a word.
+match ^(\!\w+).*
+ignore string test
+then warn &6Unknown Command, Please Check Spelling And Try Again (U41)
+then log
+
+#
+#---------------------------------------------------------------------------------
+# Word Changers and Correctors
+# These are optional. These were orginally required by the filter but no longer.
+# Server Admins: You may keep these if you wish.
+#---------------------------------------------------------------------------------
+
+# rewrite da with the
+match (?<!'|\w)da(?!\w)
+events not sign
+then rewrite the
+
+# rewrite asap with as soon as possible
+match (?<!'|\w)asap(?!\w)
+events not sign
+then rewrite as soon as possible
+
+# rewrite bbl with be back later
+match (?<!'|\w)bbl(?!\w)
+events not sign
+then rewrite be back later
+
+# rewrite bbs with be back soon
+match (?<!'|\w)bbs(?!\w)
+events not sign
+then rewrite be back soon
+
+# rewrite btw with by the way
+match (?<!'|\w)btw(?!\w)
+events not sign
+then rewrite by the way
+
+# rewrite FAQ with Frequently asked questions
+match (?<!'|\w)FAQ(?!\w)
+events not sign
+then rewrite Frequently Asked Questions
+
+# rewrite FYI with for your information
+match (?<!'|\w)fyi(?!\w)
+events not sign
+then rewrite for your information
+
+# rewrite g2g or gtg with got to go
+match (?<!'|\w)g2g(?!\w)|(?<!'|\w)gtg(?!\w)
+events not sign
+then rewrite got to go
+
+# rewrite gfy with good for you
+match (?<!'|\w)gfy(?!\w)
+events not sign
+then rewrite good for you
+
+# rewrite gg with good game
+match (?<!'|\w)gg(?!\w)
+events not sign
+then rewrite good game
+
+# rewrite gj with good job
+match (?<!'|\w)gj(?!\w)
+events not sign
+then rewrite good job
+
+# rewrite HTH with hope this helps
+match (?<!'|\w)hth(?!\w)
+events not sign
+then rewrite hope this helps
+
+# rewrite IC with I see
+match (?<!'|\w)ic(?!\w)
+events not sign
+then rewrite I see
+
+# rewrite imo or imho with in my honest opinion
+match (?<!'|\w)(imo)(?!\w)|(?<!'|\w)(imho)(?!\w)
+events not sign
+then rewrite in my honest opinion
+
+# rewrite IRL with in real life
+match (?<!'|\w)irl(?!\w)
+events not sign
+then rewrite in real life
+
+# rewrite jk with just kidding
+match (?<!'|\w)jk(?!\w)
+events not sign
+then rewrite just kidding
+
+# rewrite yew and joo with you
+match (?<!'|\w)yew(?!\w)|(?<!'|\w)joo(?!\w)
+events not sign
+then rewrite you
+
+# rewrite myob with mind your own business
+match (?<!'|\w)myob(?!\w)
+events not sign
+then rewrite mind your own business
+
+# rewrite np with no problem
+match (?<!'|\w)np(?!\w)
+events not sign
+then rewrite no problem
+
+# rewrite noyb with none of your business
+match (?<!'|\w)noyb(?!\w)
+events not sign
+then rewrite none of your business
+
+# rewrite otoh with on the other hand
+match (?<!'|\w)otoh(?!\w)
+events not sign
+then rewrite on the other hand
+
+# rewrite ru with are you
+match (?<!'|\w)ru(?!\w)
+events not sign
+then rewrite are you
+
+# rewrite TBH with to be honest
+match (?<!'|\w)tbh(?!\w)
+events not sign
+then rewrite to be honest
+
+# rewrite thx with thanks
+match (?<!'|\w)thx(?!\w)|(?<!'|\w)thnx(?!\w)
+events not sign
+then rewrite thanks
+
+# rewrite ttyl with talk to you later
+match (?<!'|\w)ttyl(?!\w)
+events not sign
+then rewrite talk to you later
+
+# rewrite w8 with wait
+match (?<!'|\w)w8(?!\w)
+events not sign
+then rewrite wait
+
+# rewrite k with ok
+match (?<!'|\w)k(?!\w)
+events not sign
+then rewrite ok
+
+# rewrite wt with what
+match (?<!'|\w)wt(?!\w)
+events not sign
+then rewrite what
+
+# Match: u and change to you
+match (?<!'|\w)u(?!\w)
+events not sign
+then rewrite you
+
+# Match: r and change to are
+match (?<!'|\w)r(?!\w)
+events not sign
+then rewrite are
+
+# Match: ur and change to you're
+match (?<!'|\w)ur(?!\w)
+events not sign
+then rewrite you're
+
+# Match: urs and change to yours
+match (?<!'|\w)urs(?!\w)
+events not sign
+then rewrite yours
+
+# Match: 2morrow and change it to tomorrow
+match (?<!'|\w)2morrow(?!\w)
+events not sign
+then rewrite tomorrow
+
+# Match: i and change it to I
+match (?<!'|\w)i(?!\w)
+events not sign
+then rewrite I
+
+# Match: plz and change it to please
+match plz
+events not sign
+then rewrite please
+
+# rewrite bc with because
+match (?<!'|\w)bc(?!\w)
+events not sign
+then rewrite because
+
+# rewrite y with why
+match (?<!'|\w)y(?!\w)
+events not sign
+then rewrite why
+
+# ---------- Change Log ---------- 
+# - Version 8.0 -
+#Added Friendly Caps Lock Detection
+#Edited Readme
+#Removed Old Advertising Filters
+#Rearranged Filter and organized into Light & Moderate, and Severe
+#Universal Match Filter
+#Added Advanced Match Filters
+#Shortened Server Language Warning
+#Renumbered All matches into L, M and S
+#Single Letter Spamming Fixed - Reduced false positves
+#Removed the term, "Allow Queen"
+#Removed Colors - Caused too many problems
+#Removed enemy and enemies
+#Removed all work that was not original to EpicATrain for copyright registration.
+#Removed old * commands
+#Added Circumvention Detection
+#Added & Edited Many Words. Total: 306
+#Created New Advertising Filters From Scratch
+#Added Important Section
+#Rewrote Planet Minecraft Filter
+#Rewrote Ask For Powers Filter
+#Rewrote Hate Server Filter
+#Added !opme (this auto bans players)
+#Rewrote Automatic Advertising Filter
+#Added a new letter and word spam filter
+#Added Sections for Optional Commands for each major filter
+#Removed All Unused Code
+#Basically the entire filter has been rewritten.
+#The Next Release Will Focus On Leet Speak.
+# - Version 8.12 -
+#Added Custom Lag Filters
+# - Version 8.15 -
+#Added and Tweaked Advanced Filters: Danm, Dick
+#Fixed numbers before words filter
+#Fixed Dollar Sign Filters
+#Fixed Stop annoying players from asking for admin, mod, etc Filter
+#Placed Copyright Information inside a comment
+#Divided Change Log into Versions
+# - Version 8.17 -
+#Disabled then kill commands until the filter is fixed
+#Attempted to fix the advertising filter
+# - Version 8.19 -
+#Fixed filter S192 - false positive for pack and pay
+#Thinking about making it easier for admins to make changes to the filter.
+#Disabled Numbers End Filter - causing too many problems
+#Happy Valentines day!
+# - Version 8.2 -
+#Added donation link and statement
+#Modified S2-2 to allow an additional variation
+#Moved around a few circumvention filters.
+#Disabled Numbers Begin Filter For Now Until I Design Something Better
+#Replaced Most Randrap Statements with I Love This Filter!
+#Disabled !random filter.
+# - Version 8.21 -
+#Modified L1-2
+# - Version 8.3 -
+#Added a few words
+#Fixed a few then log statements
+# - Version 8.41 -
+#Fixed a butt bug
+#Fixed You are now op thing
+# - Version 8.43 -
+#Adjusted the advertising filter
+#Added warn message to caps lock detection
+#Added warn message to Letter/Word Spam
+#I am the only one awake and all the dogs are snoring...
+#Who Actually Reads These?
+#Added Logging of caps lock detection and letter/word spam
+#Edited all warn messages to add color and style.
+#Added Donation Lines
+# - Version 8.46 -
+#Fixed a bug with the ! commands.
+#Adjusted Advertising Filters
+# - Version 8.47 -
+#Fixed & Tweaked L1-1 Filter
+# - Version 8.5 -
+#Added a Da-the filter
+#Rewrote the Letter/Word Spam Filter
+#Tweaked Caps Lock Warn Wording
+#Removed Warn Message For Letter/Word Spam Filter
+#Made the Letter/Word Spam Filter Always Active
+# - Version 9.0 -
+#Added Single Letter F Filter
+#Changed Experimental Spam Filter
+#Edited Filter To Allow As Soon As
+#Added M54
+#Added Thank You Filter Response
+#Added Hate Filter Response
+#Changed <Word Blocked> To I Love This Filter
+# - Version 9.15 -
+#This version only supports version 2.3.5 because I haven't gotten a chance to
+#	test the 2.4.x versions yet.
+#Removed unwanted/uneeded extra spaces
+#Disable changelog command since the change log is so huge.
+#Added Utility Numbers For Easier Identification
+#Edited U37, S2-2, S2, L12, L1-1, S192, M44, S13, S3, C6, U32, U27, M54
+#Added U42, U43, S205, U44
+# - Version 9.3 -
+#This version only supports version 2.3.5 because I am currently rewriting
+#   the entire language filter.
+#This will be the LAST version for this style of my language filter. ALL
+#   future releases will be in multiple files.
+#Added Foreign Character Blocker
+#Rewrote IP Address advertising Filter
+#Rewrote domain advertising filter
+#Removed disable colors filer
+#Changed anti-crack method from (\W|\d|_) to (\W|_) to reduce false positives.
+#Modified Caps Lock Detection
+#Added Lettered Numbers To Digits
+#Changed All (?!\w) beginnings to (?<!'|\w) To Remove Additional False Positives.
+#Changed Wording When A Filter Is Activated
+#Updated Legal information
+#Updated Yolo And Swag Filters
+#Updated Lag Filter To Check Server To See If Server Is Lagging And Add Useful
+#	Information, Such As How To Fix Lag.
+#Removed all the un-needed ignored strings in the Single Letter Spamming Filter.
+#Edited Custom Filter For Gold/Butter
+#Removed Utility Filters 4, 5, 6, 11, 12, 13, 16, 17, 18, 19, 20, 26, 33, 42, 43
+#Edited Utility Filters 10, 14, 25, 27, 29, 35, 36
+#Disabled Utility Filter 28, 30
+#Heavy Alternations To Utility Filters 31, 32
+#Replaced Blocked Player Warning With Player Violated Rule Warning
+#Fixed Rule S20, U02, U14, U15, U21
+#Replaced Then I love This Filter With Deletion Of Word
+#Moved word changers to bottom of file for easier filtering
+#Fixed the lack of a space problem when replacing words - Because This Is On So
+#	Many Filters, I will not list all the filters affected.
+#Removed Optional Commands Because Of Command Chain Option
+#Edited Filters L4, L5, L6, L10, L12, L19, L22, L27, L33, L37, L40, L51
+#Did So Much That I Lost Track of What I was doing...
+# ---------- End Change Log ---------- 
+
+# Check to see which version is running
+# Type !version in game.
+match ^(\!version)$
+then rewrite &aVersion: 1.6.4-3.1.2-v9.3 10-28-2013 7:42 PM
+then console say (Checking version with command !version) (U40)
+
+# If you have any suggestions, please let me know!   Thank you!
+# Please add EpicATrain to your VIP list on your server!
+
+# ©2012-2013 Addam Waitkus. All rights reserved.
